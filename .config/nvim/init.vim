@@ -1,5 +1,5 @@
-source ~/.config/nvim/config/plugins.vim
-source ~/.config/nvim/config/general.vim
-source ~/.config/nvim/config/statusline.vim
-source ~/.config/nvim/config/keys.vim
-source ~/.config/nvim/config/funcs.vim
+source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/general.vim
+source ~/.config/nvim/statusline.vim
+source ~/.config/nvim/keys.vim
+source ~/.config/nvim/funcs.vim

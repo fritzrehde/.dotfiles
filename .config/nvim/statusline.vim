@@ -28,16 +28,10 @@ set statusline+=\
 " Color theme
 "default normal mode
 hi User1 guifg=#353B4A guibg=#8FAAC9
-"git
-hi User5 guifg=#353B4A guibg=#626b85
-"file name
-hi User6 guifg=#353B4A guibg=#626b85
-"file modifier
-hi User7 guifg=#353B4A guibg=#626b85
 "file type
-hi User8 guifg=#353B4A guibg=#545b73
+hi User8 guifg=#353B4A guibg=#787C8F
 "lines
-hi User9 guifg=#353B4A guibg=#626b85
+hi User9 guifg=#353B4A guibg=#8D91A7
 
 au InsertEnter * hi User1 guibg=#AEC694
 au InsertLeave * hi User1 guibg=#8FAAC9
