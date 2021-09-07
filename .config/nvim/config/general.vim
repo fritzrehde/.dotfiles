@@ -7,7 +7,8 @@ set termguicolors
 set number
 set noshowcmd
 set encoding=utf-8
-set scrolloff=10
+set scrolloff=2
+set clipboard=unnamed
 
 set ignorecase
 set nohlsearch
@@ -23,7 +24,6 @@ set autoindent
 set guicursor=i:ver90
 set mouse=a
 
-"set belloff=all
 set noerrorbells
 set visualbell
 set t_vb=

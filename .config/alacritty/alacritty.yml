@@ -9,8 +9,8 @@ window:
     x: 960
     y: 0
   padding:
-    x: 0
-    y: 0
+    x: 4
+    y: 2
   decorations: none
 
   # Startup Mode (changes require restart)
@@ -36,29 +36,29 @@ window:
 # Font configuration
 font:
   normal:
-    family: "MesloLGS NF"
+    family: "Menlo"
     style: Regular
   bold:
-    family: "MesloLGS NF"
+    family: "Menlo"
     style: Bold
   italic:
-    family: "MesloLGS NF"
+    family: "Menlo"
     style: Italic
   size: 12.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
+  glyph_offset:
+    x: 0
+    y: 1
 
   # Thin stroke font rendering (macOS only)
   #
@@ -160,16 +160,12 @@ bell:
   #
   command: None
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1.0
 
-# selection:
+selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   # save_to_clipboard: true
@@ -190,10 +186,10 @@ cursor:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+  program: /bin/zsh
+  args:
+    - --login
 
 # Startup directory
 #
@@ -490,7 +486,7 @@ cursor:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -600,6 +596,7 @@ cursor:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+  - { key: A, mods: Alt, chars: "\x1ba" }
 
 #debug:
   # Display the time it takes to redraw each frame.
