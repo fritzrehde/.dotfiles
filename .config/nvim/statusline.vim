@@ -11,18 +11,19 @@ set statusline+=%#WildMenu#
 "set statusline+=\ %{StatuslineGit()}
 
 set statusline+=%#StatusLineNC#
-set statusline+=\ %t		"file name
-set statusline+=%m			"modified flag
+set statusline+=\ %t "file name
+set statusline+=%m "modified flag
 
-set statusline+=%=			"go to right side
+set statusline+=%= "go to right side
 
 set statusline+=%8*
-set statusline+=\ %y		"file type
+set statusline+=\ %y "file type
 set statusline+=\ 
 
 set statusline+=%9*
-set statusline+=\ %p%%		"percentage through file
-set statusline+=\ %l/%L		"current line/total lines
+set statusline+=\ %p%% "percentage through file
+set statusline+=\ :%c "column number
+set statusline+=\ %l/%L "current line/total lines
 set statusline+=\ 
 
 " Color theme

@@ -1,29 +1,42 @@
 set nocompatible
 
-syntax on
+" UI
+syntax enable
 colorscheme nord
 set termguicolors
-
 set number
 set noshowcmd
-set encoding=utf-8
-set scrolloff=2
-set clipboard=unnamed
+set nowrap
+set list 
+set listchars=tab:\│\ 
+"set listchars=tab:\|\ 
 
-set ignorecase
-set nohlsearch
+" UX
+set scrolloff=2
+set splitbelow splitright
+set nostartofline
+
+" General
+set clipboard=unnamed
+set encoding=utf-8
+filetype on
 
 " Tabs
-set tabstop=4 
-set softtabstop=0 
-set noexpandtab 
-set shiftwidth=4 
+set tabstop=2
+set softtabstop=0
+set noexpandtab
+set shiftwidth=2
 set autoindent
+
+" Search
+set ignorecase
+set nohlsearch
 
 " Cursor
 set guicursor=i:ver90
 set mouse=a
 
+" Bell
 set noerrorbells
 set visualbell
 set t_vb=
