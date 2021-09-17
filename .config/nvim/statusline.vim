@@ -21,8 +21,8 @@ set statusline+=\ %y "file type
 set statusline+=\ 
 
 set statusline+=%9*
-set statusline+=\ %p%% "percentage through file
 set statusline+=\ :%c "column number
+set statusline+=\ %p%% "percentage through file
 set statusline+=\ %l/%L "current line/total lines
 set statusline+=\ 
 
