@@ -11,6 +11,7 @@ let s:comment_map = {
 	\ "zsh": '#',
 	\ "vim": '"',
 	\ "tex": '%',
+	\ "make": '#',
 	\}
 
 function! ToggleComment()

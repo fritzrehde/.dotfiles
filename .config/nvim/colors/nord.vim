@@ -25,7 +25,7 @@ let s:nord4_gui = "#D8DEE9"
 let s:nord5_gui = "#E5E9F0"
 let s:nord6_gui = "#ECEFF4"
 let s:nord7_gui = "#8FBCBB"
-let s:nord8_gui = "#90D1E2"
+let s:nord8_gui = "#8AC1D2"
 let s:nord9_gui = "#81A1C1"
 let s:nord10_gui = "#5E81AC"
 let s:nord11_gui = "#BF616A"
@@ -451,7 +451,7 @@ call s:hi("markdownCodeDelimiter", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownFootnote", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownId", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownIdDeclaration", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("markdownH1", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("markdownH1", s:nord4_gui, "", "", "", "", "")
 call s:hi("markdownLinkText", s:nord8_gui, "", s:nord8_term, "", "", "")
 call s:hi("markdownUrl", s:nord4_gui, "", "NONE", "", "NONE", "")
 hi! link markdownBold Bold
