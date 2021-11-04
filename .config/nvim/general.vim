@@ -4,9 +4,10 @@ set nocompatible
 syntax enable
 colorscheme nord
 set termguicolors
-set relativenumber
+set number
 set noshowcmd
-set nowrap
+set wrap
+set linebreak
 set list 
 
 " UX
@@ -45,3 +46,6 @@ set vb t_vb=
 
 " Nord theme
 let g:nord_cursor_line_number_background=1
+
+" Syntax
+au BufRead *.minijava set filetype=java

@@ -1,7 +1,6 @@
 " Toggle comment
 let s:comment_map = { 
 	\ "c": '\/\/',
-	\ "cpp": '\/\/',
 	\ "java": '\/\/',
 	\ "lua": '--',
 	\ "python": '#',
@@ -12,6 +11,7 @@ let s:comment_map = {
 	\ "vim": '"',
 	\ "tex": '%',
 	\ "make": '#',
+	\ "tmux": '#',
 	\}
 
 function! ToggleComment()
