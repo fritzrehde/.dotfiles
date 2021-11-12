@@ -38,9 +38,9 @@ function cf() { cd $(find . -type d | fzf) ;}
 ## Git
 function gitrm() { git ls-files | fzf -m | xargs git rm ;}
 function gitadd() { fzf -m | xargs git add ;}
-function gitquick() {
+function gq() {
 	git add -A
-	git commit -m "$1"
+	git commit -m "$*"
 	git push
 }
 
