@@ -17,8 +17,7 @@ alias ..="cd .."
 ## Tools
 alias n="nvim"
 alias g="git"
-alias gc="gc"
-alias t="todo.sh -d ~/.todo/config -f -n -A -P"
+alias todo="todo.sh -d ~/.todo/config -f -n -A -P"
 alias cls="clear; todo.sh -d ~/.todo/config -f -n -A -P ls"
 alias ta="tmux attach -t"
 alias tree="exa --tree"
@@ -31,39 +30,46 @@ alias dot2='/usr/bin/git --git-dir=$HOME/.dotfiles2/ --work-tree=$HOME'
 #-------------------------------------------------------------------------------
 
 # Functions --------------------------------------------------------------------
+## todo
+function todo() { todo.sh -d ~/.todo/config -f -n -A -P a '"$*"' }
+
 ## fzf
-function nf() { fzf --height 20% --layout=reverse | xargs nvim ;}
-function cf() { cd $(find . -type d | fzf) ;}
+function nf() # open files with nvim through fzf
+{ 
+	# find . -type f | fzf -m --layout=reverse | xargs -I '{}' tmux new-window -d "nvim {}"
+	# fd . --type file | fzf -m --layout=reverse | xargs -I '{}' tmux new-window -d "nvim {}"
+	fzf -m --preview='cat {}' | xargs -I '{}' tmux new-window -a -d "nvim {}"
+	tmux next-window
+}
+function cf() { cd $(find -f . -E '/.git/ d' -type d | fzf --layout=reverse) ;}
 
 ## Git
-function gitrm() { git ls-files | fzf -m | xargs git rm ;}
-function gitadd() { fzf -m | xargs git add ;}
-function gq() {
-	git add -A
-	git commit -m "$*"
-	git push
-}
+function gq() { git add -A; git commit -m "$*"; git push ;}
+function gc() { git clone -q "$1"; cd $(basename "$1" | sed -e 's/.git//g'); clear; exa --tree ;}
+# function gitrm() { git ls-files | fzf -m | xargs git rm ;}
+# function gitadd() { fzf -m | xargs git add ;}
 
 ## Tmux
-function nt() { 
-	for a in "$@"
-	do
-		tmux new-window "nvim $a" 
-	done
-}
-function m() { tmux new-window "man $@" ;}
-function tn() {
+function tn() # create new tmux session, if no argument attach misc 
+{
 	if [[ $# == 1 ]]; then
 		tmux new-session -A -s "$1"
 	else
 		tmux new-session -A -s misc
 	fi
 }
+function nt()
+{ 
+	for a in "$@"
+	do
+		tmux new-window "nvim $a" 
+	done
+}
 
 ## General
 function cpwd() { pwd | pbcopy } # copy current working directory to clipboard
-function cdx() { cd "$@" && exa ;}
-function tab() { # convert files from spaces to tabs
+function tab() # convert files from spaces to tabs
+{
 	tab_size=$1
 	shift
 	for a in "$@"
@@ -72,11 +78,6 @@ function tab() { # convert files from spaces to tabs
 		mv $a-notab $a
 	done
 }
-
-# TODO: compress pdf 
-# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_PDF_file.pdf input_PDF_file.pdf
-# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_PDF_file.pdf input_PDF_file.pdf
-# gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed_PDF_file.pdf input_PDF_file.pdf
 #-------------------------------------------------------------------------------
 
 # Vim-Mode ---------------------------------------------------------------------
@@ -111,8 +112,8 @@ preexec() {
 # Tools ------------------------------------------------------------------------
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
-# export FZF_DEFAULT_OPTS=''
+# export FZF_DEFAULT_OPTS='--layout=reverse --margin 15,0,15,1% --border=sharp --info=hidden'
+export FZF_DEFAULT_OPTS='--layout=reverse --margin 15,0,15,1% --border=sharp --info=hidden --preview-window=right,60%,hidden --bind='btab:toggle-preview''
 #-------------------------------------------------------------------------------
 
 # Completion -------------------------------------------------------------------
