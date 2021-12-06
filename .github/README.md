@@ -14,6 +14,7 @@ This repository contains my personal dotfiles. They are stored here for convenie
 ## Some other CLI tools I use
 * [fzf](https://github.com/junegunn/fzf): fuzzy finder
 * [todo.sh](https://github.com/todotxt/todo.txt-cli): minimal todo list
+* [wttr.in](https://github.com/chubin/wttr.in): weather forecast
 
 ## How to store dotfiles in a git repository
 Here is the article that I used to set up this git repository: https://www.atlassian.com/git/tutorials/dotfiles
