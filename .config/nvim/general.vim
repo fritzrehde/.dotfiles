@@ -4,9 +4,9 @@ set nocompatible
 syntax enable
 colorscheme nord
 set termguicolors
-set number
+set relativenumber
 set noshowcmd
-set wrap
+set nowrap
 set linebreak
 set list 
 
