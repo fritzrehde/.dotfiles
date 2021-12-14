@@ -96,13 +96,19 @@ function popup_kill_sessions()
 function dot()
 {
 	dot_cmd=(/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME)
-	if [[ $# == 1 && "$1" == "pull" ]]; then
-		${dot_cmd} pull
-	else
-		cat .config_files | fzf | xargs -J % ${dot_cmd} add %
-		${dot_cmd} commit -m "$*"
-		${dot_cmd} push
+	if [[ $# == 0 ]]; then
+		read -p "Commit message: " commit_msg
+		cat .config_files | fzf --margin=14,0,15,1% | xargs -J % ${dot_cmd} add %
+		${dot_cmd} commit -m "$commit_msg"; ${dot_cmd} push
 	fi
+
+	# if [[ $# == 1 && ("$1" == "pull" || "$1" == "status") ]]; then
+		# ${dot_cmd} "$1"
+	# else
+		# cat .config_files | fzf --margin=14,0,15,1% | xargs -J % ${dot_cmd} add %
+		# ${dot_cmd} commit -m "$*"; ${dot_cmd} push
+	# fi
+	${dot_cmd} "$*"
 }
 
 ## Git
