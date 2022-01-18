@@ -1,0 +1,159 @@
+[colors]
+background = #000000
+background-alt = #2e3440
+foreground = #ffffff
+foreground-alt = #555
+primary = #ffffff
+alert = #bf616a
+
+
+[bar/top]
+;monitor = ${env:MONITOR:HDMI-1}
+height = 20
+top = true
+fixed-center = true
+wm-restack = i3
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Terminus:size=10;2
+font-1 = FiraCode Nerd Font:size=11;3
+
+modules-left = i3
+modules-center = date
+modules-right = wlan eth temp ram battery
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+
+[module/date]
+type = internal/date
+interval = 2
+
+date = %a, %d %b
+time = %H:%M
+
+label = %date% %time%
+
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 5
+
+format-connected = 直 <label-connected>
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/eth]
+type = internal/network
+interface = wwp0s29u1u4i6
+interval = 5
+
+format-connected =  <label-connected>
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/fan]
+type = custom/script
+interval = 10
+exec = cut -c 1-2 /sys/class/thermal/thermal_zone1/temp
+format-prefix = " "
+format-suffix = "rpm"
+
+
+[module/temp]
+type = custom/script
+interval = 10
+exec = cut -c 1-2 /sys/class/thermal/thermal_zone1/temp
+format-prefix = "﨎 "
+format-suffix = "°"
+
+
+[module/ram]
+type = custom/script
+interval = 10
+exec = printf "%.1f GB" $(free | grep Mem | awk '{print $3/1000000}')
+format-prefix = " "
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging =  <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-0-foreground = ${colors.alert}
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

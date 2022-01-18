@@ -13,7 +13,6 @@ alias c="clear"
 alias ..="cd .."
 
 ## Tools
-alias n="nvim"
 alias ct="clear; exa --tree"
 alias g="git"
 alias tree="exa --tree"
@@ -62,7 +61,8 @@ function popup_cd()
 	fi
 }
 export TODO=~/.todo/config
-function popup_todo_do() { todo.sh -Pd $TODO ls | fzf -e --ansi --with-nth=2.. | grep -o '^[0-9][0-9]*' | xargs -J % todo.sh -fNAd $TODO do % }
+function popup_todo_do() { todo.sh -Pd $TODO ls | fzf -e --ansi --with-nth=2.. | awk '{print $1}' | tr '\n' ' ' | xargs -I % todo.sh -fnA do % }
+function popup_todo_add() { echo -n "todo: "; read todo; todo.sh add ${todo} }
 function popup_switch_session()
 {
 	current_session=$(tmux display-message -p '#{session_name}')
@@ -75,39 +75,28 @@ function popup_kill_sessions()
 }
 
 ## fzf
-# function n()
-# {
-	# num_args=$#
-	# if [[ "$num_args" == 0 ]]; then # fzf
-		# count=$(tmux display-message -p '#{session_windows}')
-		# fd -t f | fzf --preview='cat {}' --margin 15,0,15,2% | tac | xargs -I % tmux new-window -a -d "nvim %"
-		# new_count=$(tmux display-message -p '#{session_windows}')
-		# if [[ count -ne new_count ]]; then tmux next-window; fi # go to next window only if a file was opened
-	# elif [[ "$num_args" == 1 ]]; then # default
-		# nvim "$1"
-	# else # arguments
-		# for a in "$@"
-		# do
-			# tmux new-window -a -d "nvim $a" 
-		# done
-		# tmux next-window
-	# fi
-# }
+function n()
+{
+	num_args=$#
+	if [[ "$num_args" == 1 ]]; then
+		tmux new-window -a "nvim $1" 
+	else # arguments
+		for a in "$@"
+		do
+			tmux new-window -a -d "nvim $a" 
+		done
+		tmux next-window
+	fi
+}
 function dot()
 {
 	dot_cmd=(/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME)
 	if [[ $# == 0 ]]; then
-		read -p "Commit message: " commit_msg
-		cat .config_files | fzf --margin=14,0,15,1% | xargs -J % ${dot_cmd} add %
+		echo -n "Commit message: "
+		read commit_msg
+		cat .config_files | fzf --margin=14,0,15,1% | xargs -I % ${dot_cmd} add %
 		${dot_cmd} commit -m "$commit_msg"; ${dot_cmd} push
 	fi
-
-	# if [[ $# == 1 && ("$1" == "pull" || "$1" == "status") ]]; then
-		# ${dot_cmd} "$1"
-	# else
-		# cat .config_files | fzf --margin=14,0,15,1% | xargs -J % ${dot_cmd} add %
-		# ${dot_cmd} commit -m "$*"; ${dot_cmd} push
-	# fi
 	${dot_cmd} "$*"
 }
 
@@ -176,15 +165,16 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case sensitivity
 #-------------------------------------------------------------------------------
 
 # opam configuration
-[[ ! -r /Users/Fritz/.opam/opam-init/init.zsh ]] || source /Users/Fritz/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /home/fritz/.opam/opam-init/init.zsh ]] || source /home/fritz/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # Tools ------------------------------------------------------------------------
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_BINDINGS="--bind='tab:toggle+down' \
-	--bind='btab:down' \
 	--bind='P:toggle-preview' \
-	--bind='Q:clear-query+first' \
+	--bind='J:down' \
+	--bind='K:up' \
+	--bind='btab:toggle+clear-query+first' \
 	--bind='A:toggle-all'"
 export FZF_DEFAULT_OPTS="$FZF_BINDINGS \
 	--multi \

@@ -6,7 +6,7 @@ colorscheme nord
 set termguicolors
 set relativenumber
 set noshowcmd
-set nowrap
+set wrap
 set linebreak
 set list 
 
@@ -17,7 +17,7 @@ set nostartofline
 set backspace=indent,eol,start
 
 " General
-set clipboard=unnamed
+set clipboard=unnamedplus
 set encoding=utf-8
 filetype on
 
