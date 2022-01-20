@@ -13,6 +13,8 @@ bindsym $mod+h exec kitty --class "popup_l" htop
 bindsym $mod+Return exec kitty
 bindsym $mod+BackSpace exec firefox
 bindsym $mod+d exec rofi -show drun
+bindsym $mod+Escape exec ~/.scripts/rofi/rofipower.sh
+bindsym $mod+p exec /bin/zsh -ic clipmenu
 
 # startup apps
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -80,9 +82,9 @@ bindsym $mod+Shift+v split v
 bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
