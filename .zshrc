@@ -1,68 +1,28 @@
+# Aliases ----------------------------------------------------------------------
+alias z="source ~/.zshrc"
+alias c="clear"
+alias ct="clear; exa --tree"
+alias ..="cd .."
+
+## Shell scripts
+alias n='~/.scripts/nvim/nvim.sh'
+alias t='~/.scripts/tmux/tmux.sh'
+alias gq='~/.scripts/git/gitquick.sh'
+alias tab='~/.scripts/util/tab.sh'
+alias dot='~/.scripts/git/dotfiles.sh'
+alias dot2='/usr/bin/git --git-dir=$HOME/.dotfiles2/ --work-tree=$HOME'
+#-------------------------------------------------------------------------------
+
+# Functions --------------------------------------------------------------------
+function gc() { git clone -q "$1"; cd $(basename "$1" | sed -e 's/.git//g'); clear; exa --tree ;}
+#-------------------------------------------------------------------------------
+
 # Prompt -----------------------------------------------------------------------
 PROMPT='%F{#626b85}%n@%m%f %F{#8FAAC9}%~%f%F{#AEC694}$(git_branch)%f %F{#AEC694}>%f '
 setopt PROMPT_SUBST
 function git_branch() {
 	git symbolic-ref --short HEAD 2> /dev/null | sed -n -e 's/.*/ (&)/p'
 }
-#-------------------------------------------------------------------------------
-
-# Aliases ----------------------------------------------------------------------
-## Shortcuts
-alias z="source ~/.zshrc"
-alias c="clear"
-alias ..="cd .."
-
-## Tools
-alias ct="clear; exa --tree"
-alias tree="exa --tree"
-
-## Other
-alias dot='~/.scripts/git/dot.sh'
-alias dot2='/usr/bin/git --git-dir=$HOME/.dotfiles2/ --work-tree=$HOME'
-#-------------------------------------------------------------------------------
-
-# Functions --------------------------------------------------------------------
-## fzf
-function n()
-{
-	num_args=$#
-	if [[ "$num_args" == 1 ]]; then
-		tmux new-window -a "nvim $1" 
-	else # arguments
-		for a in "$@"
-		do
-			tmux new-window -a -d "nvim $a" 
-		done
-		tmux next-window
-	fi
-}
-
-## Git
-function gq() { git add -A; git commit -m "$*"; git push ;}
-function gc() { git clone -q "$1"; cd $(basename "$1" | sed -e 's/.git//g'); clear; exa --tree ;}
-
-## Tmux
-function t() # create new tmux session, if no argument attach misc 
-{
-	if [[ $# == 1 ]]; then
-		tmux new-session -A -s "$1"
-	else
-		tmux new-session -A -s misc
-	fi
-}
-
-## General
-function tab() # convert spaces to tabs
-{
-	tab_size=$1
-	shift
-	for a in "$@"
-	do
-		unexpand -t "$tab_size" $a > $a-notab
-		mv $a-notab $a
-	done
-}
-function cpwd() { pwd | pbcopy } # copy current working directory to clipboard
 #-------------------------------------------------------------------------------
 
 # Vim-Mode ---------------------------------------------------------------------
