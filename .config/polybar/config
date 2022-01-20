@@ -1,6 +1,6 @@
 [colors]
 background = #000000
-background-alt = #2e3440
+background-alt = #787C8F
 foreground = #ffffff
 foreground-alt = #555
 primary = #ffffff
@@ -28,7 +28,7 @@ font-1 = FiraCode Nerd Font:size=11;3
 
 modules-left = i3
 modules-center = date
-modules-right = wlan eth temp ram battery
+modules-right = wlan eth cpu_temp ram_used battery
 
 
 [module/i3]
@@ -110,19 +110,20 @@ format-prefix = " "
 format-suffix = "rpm"
 
 
-[module/temp]
+[module/cpu_temp]
 type = custom/script
 interval = 10
-exec = cut -c 1-2 /sys/class/thermal/thermal_zone1/temp
+exec = ~/.scripts/bar/cpu_temp.sh
 format-prefix = "﨎 "
 format-suffix = "°"
 
 
-[module/ram]
+[module/ram_used]
 type = custom/script
 interval = 10
-exec = printf "%.1f GB" $(free | grep Mem | awk '{print $3/1000000}')
+exec = ~/.scripts/bar/used_ram.sh
 format-prefix = " "
+format-suffix = " GB"
 
 
 [module/battery]
@@ -133,7 +134,7 @@ full-at = 100
 
 format-charging =  <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-full =  <label-full>
+format-full =  <label-full>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

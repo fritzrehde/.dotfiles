@@ -14,66 +14,14 @@ alias ..="cd .."
 
 ## Tools
 alias ct="clear; exa --tree"
-alias g="git"
 alias tree="exa --tree"
-alias we="clear; curl v2d.wttr.in/Garching"
 
 ## Other
+alias dot='~/.scripts/git/dot.sh'
 alias dot2='/usr/bin/git --git-dir=$HOME/.dotfiles2/ --work-tree=$HOME'
 #-------------------------------------------------------------------------------
 
 # Functions --------------------------------------------------------------------
-## Tmux popups
-function popup_nvim()
-{
-	FZF_OPTS=(--preview='cat {}')
-	current_path=$(tmux display-message -p '#{pane_current_path}')
-	if search_path=$(cd "$current_path"; git rev-parse --show-toplevel 2> /dev/null) ; then
-		FZF_OPTS+=(--header=$(basename ${search_path}))
-	else
-		search_path=~/code
-	fi
-
-	count=$(tmux display-message -p '#{session_windows}')
-	(cd $search_path; fd -t f --base-directory $search_path | cut -c 3- | fzf ${FZF_OPTS} | tac | xargs -I % tmux new-window -a -d "nvim %")
-	new_count=$(tmux display-message -p '#{session_windows}')
-	if [[ count -ne new_count ]]; then tmux next-window; fi # go to next window only if a file was opened
-}
-function popup_nvim_config()
-{
-	count=$(tmux display-message -p '#{session_windows}')
-	cat .config_files | fzf --preview='cat {}' | tac | xargs -I % tmux new-window -a -d "nvim %"
-	new_count=$(tmux display-message -p '#{session_windows}')
-	if [[ count -ne new_count ]]; then tmux next-window; fi # go to next window only if a file was opened
-}
-function popup_cd()
-{
-	current_window=$(tmux display-message -p '#{window_index}')
-	search_path=$(tmux display-message -p '#{pane_current_path}')
-	base_path=.
-	if [[ $search_path -ef ~ ]]; then
-		search_path=~/code
-		base_path=$search_path
-	fi
-	new_path=$(fd -t d --base-directory $search_path | cut -c 3- | fzf +m)
-	if [ ! -z $new_path ]; then
-		tmux send-keys -t $current_window "cd $base_path/$new_path; clear" ENTER
-	fi
-}
-export TODO=~/.todo/config
-function popup_todo_do() { todo.sh -Pd $TODO ls | fzf -e --ansi --with-nth=2.. | awk '{print $1}' | tr '\n' ' ' | xargs -I % todo.sh -fnA do % }
-function popup_todo_add() { echo -n "todo: "; read todo; todo.sh add ${todo} }
-function popup_switch_session()
-{
-	current_session=$(tmux display-message -p '#{session_name}')
-	tmux list-sessions -F '#{session_name}' | sed "/$current_session/d" | fzf +m -0 | xargs -I % tmux switch-client -t %
-}
-function popup_kill_sessions()
-{
-	tmux switch-client -t misc
-	tmux list-sessions -F '#{session_name}' | sed "/misc/d" | fzf -0 | xargs -I % tmux kill-session -t %
-}
-
 ## fzf
 function n()
 {
@@ -87,17 +35,6 @@ function n()
 		done
 		tmux next-window
 	fi
-}
-function dot()
-{
-	dot_cmd=(/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME)
-	if [[ $# == 0 ]]; then
-		echo -n "Commit message: "
-		read commit_msg
-		cat .config_files | fzf --margin=14,0,15,1% | xargs -I % ${dot_cmd} add %
-		${dot_cmd} commit -m "$commit_msg"; ${dot_cmd} push
-	fi
-	${dot_cmd} "$*"
 }
 
 ## Git
