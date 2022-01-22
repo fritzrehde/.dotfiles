@@ -5,9 +5,6 @@ window:
   dimensions:
     columns: 0
     lines: 0
-  position:
-    x: 960
-    y: 0
   padding:
     x: 4
     y: 2

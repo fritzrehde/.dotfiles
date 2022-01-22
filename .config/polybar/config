@@ -12,7 +12,7 @@ alert = #bf616a
 height = 20
 top = true
 fixed-center = true
-wm-restack = i3
+wm-restack = bspwm
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -26,9 +26,30 @@ module-margin-right = 1
 font-0 = Terminus:size=10;2
 font-1 = FiraCode Nerd Font:size=11;3
 
-modules-left = i3
+modules-left = i3 bspwm
 modules-center = date
 modules-right = wlan eth cpu_temp ram_used battery
+
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = ""
+label-empty-padding = 0
+
+; Separator in between workspaces
+; label-separator = |
 
 
 [module/i3]
