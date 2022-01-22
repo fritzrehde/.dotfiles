@@ -6,25 +6,13 @@ alt + Return
 alt + BackSpace
 	firefox
 
-# rofi apps
-alt + d
-	rofi -show drun
-
-# rofi clipmenu
-alt + p
-	/bin/zsh -ic clipmenu
-
-# rofi power
-alt + Escape
-	~/.scripts/rofi/rofipower.sh
-
 # reload sxhkd
 alt + r
-	pkill -USR1 -x sxhkd; dunstify "sxhkd reloaded" -t 500
+	pkill -USR1 -x sxhkd; dunstify "sxhkd reloaded" -a "ignorehistory" -t 500 -r 9997
 
 # reload bspwm
-alt + shift + r
-	bspc wm -r
+alt + shift + {q,r}
+	bspc {quit,wm -r}
 
 # focus on given desktop
 alt + {1-9,0}
@@ -32,7 +20,9 @@ alt + {1-9,0}
 
 # send to given desktop
 alt + shift + {1-9,0}
-	bspc node -d '^{1-9,10}'
+	DESKTOP='^{1-9,10}'; \
+	bspc node -d $DESKTOP; \
+	bspc desktop -f $DESKTOP
 
 # kill window
 alt + q
@@ -42,6 +32,19 @@ alt + q
 alt + Tab
 	bspc node -f next.local.window
 
+## rofi
+# rofi apps
+alt + d
+	rofi -show drun
+
+# rofi clipmenu
+alt + p
+	/bin/zsh -ic "clipmenu -theme ~/.config/rofi/themes/clipmenu.rasi"
+
+# rofi power
+alt + Escape
+	~/.scripts/rofi/rofipower.sh
+
 ## popups
 # todo list
 alt + t
@@ -49,7 +52,8 @@ alt + t
 
 # todo add
 alt + n
-	kitty --class "popup_xs" ~/.scripts/todo/todo_add.sh
+	alacritty --class popup_xs,popup_xs -e ~/.scripts/todo/todo_add.sh
+	# kitty --class "popup_xs" ~/.scripts/todo/todo_add.sh
 
 # weather
 # alt + w
@@ -61,20 +65,34 @@ alt + h
 
 ## dunst
 # close all dunst notifications
-alt + space
+alt + w
 	dunstctl close
 
 # increase volume
-alt + l
+alt + k
 	~/.scripts/notify/changevolume.sh up
 
 # decrease volume
-alt + k
+alt + j
 	~/.scripts/notify/changevolume.sh down
 
 # decrease volume
 alt + m
 	~/.scripts/notify/changevolume.sh mute
+
+## tmux
+# Kill current tmux session
+super + q
+	~/.scripts/tmux/kill_session.sh
+
+## screenshots
+# whole screen
+super + shift + 3
+	~/.scripts/util/screenshot.sh
+
+# select frame
+super + shift + 4
+	~/.scripts/util/screenshot.sh select
 
 # close and kill
 # super + {_,shift + }w

@@ -400,7 +400,7 @@
 
 [history-ignore]
    # This notification will not be saved in history
-   appname = changevolume
+   appname = ignorehistory
    history_ignore = yes
 
 #[skip-display]
