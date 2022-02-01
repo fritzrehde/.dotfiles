@@ -157,7 +157,7 @@ bell:
   #
   command: None
 
-background_opacity: 1.0
+# background_opacity: 1.0
 
 selection:
   # This string contains all characters that are used as separators for

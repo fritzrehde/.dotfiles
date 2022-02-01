@@ -45,15 +45,26 @@ alt + p
 alt + Escape
 	~/.scripts/rofi/rofipower.sh
 
-## popups
 # todo list
 alt + t
 	kitty --class "popup_s" /bin/zsh -ic ~/.scripts/todo/todo_do.sh
+
+# todo prio
+alt + i
+	kitty --class "popup_s" /bin/zsh -ic ~/.scripts/todo/todo_prio.sh
 
 # todo add
 alt + n
 	alacritty --class popup_xs,popup_xs -e ~/.scripts/todo/todo_add.sh
 	# kitty --class "popup_xs" ~/.scripts/todo/todo_add.sh
+
+# timer
+alt + shift + t
+	alacritty --class popup_xs,popup_xs -e ~/.scripts/notify/timer_init.sh
+
+# extra
+alt + e
+	kitty --hold --class "popup_s" ~/.scripts/util/extra.sh
 
 # weather
 # alt + w

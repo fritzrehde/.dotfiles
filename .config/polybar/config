@@ -142,16 +142,22 @@ format-suffix = "°"
 [module/ram_used]
 type = custom/script
 interval = 10
-exec = ~/.scripts/bar/used_ram.sh
+exec = ~/.scripts/bar/ram_used.sh
 format-prefix = " "
 format-suffix = " GB"
 
 
 [module/battery]
+type = custom/script
+interval = 10
+exec = ~/.scripts/bar/battery.sh
+
+
+[module/battery2]
 type = internal/battery
 battery = BAT0
 adapter = AC
-poll-interval = 5
+poll-interval = 10
 full-at = 100
 
 format-charging =  <label-charging>
