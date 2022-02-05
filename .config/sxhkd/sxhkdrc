@@ -32,6 +32,10 @@ alt + q
 alt + Tab
 	bspc node -f next.local.window
 
+# fullscreen
+# alt + f
+	# bspc node -t fullscreen
+
 ## rofi
 # rofi apps
 alt + d

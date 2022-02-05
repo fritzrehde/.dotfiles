@@ -18,4 +18,8 @@ vnoremap <leader><Space> :call ToggleComment()<cr>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Continue highlighting after indentation
+vnoremap < <gv
+vnoremap > >gv
+
 cnoremap <silent> <expr> <enter> CenterSearch()

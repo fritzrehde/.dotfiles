@@ -4,7 +4,7 @@ set nocompatible
 syntax enable
 colorscheme nord
 set termguicolors
-set relativenumber
+set number relativenumber
 set noshowcmd
 set wrap
 set linebreak
