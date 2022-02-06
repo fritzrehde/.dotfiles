@@ -3,6 +3,7 @@ alias z="source ~/.zshrc"
 alias c="clear"
 alias ct="clear; exa --tree"
 alias ..="cd .."
+alias update="sudo pacman -Syu"
 
 ## Shell scripts
 alias n='~/.scripts/nvim/nvim.sh'

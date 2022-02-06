@@ -70,13 +70,17 @@ alt + shift + t
 alt + e
 	kitty --hold --class "popup_s" ~/.scripts/util/extra.sh
 
-# weather
-# alt + w
-	# kitty --hold --class "popup_l" curl wttr.in/Garching
-
 # htop
 alt + h
 	kitty --class "popup_l" htop
+
+# mpv clipboard
+alt + v
+	START=$(bspc query -D -d focused --names); \
+	VIDEO=3; \
+	bspc desktop -f $VIDEO; \
+	xclip -selection clipboard -o | xargs mpv --fs --profile=1080p; \
+	bspc desktop -f $START
 
 ## dunst
 # close all dunst notifications
