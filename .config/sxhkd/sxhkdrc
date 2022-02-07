@@ -21,8 +21,7 @@ alt + {1-9,0}
 # send to given desktop
 alt + shift + {1-9,0}
 	DESKTOP='^{1-9,10}'; \
-	bspc node -d $DESKTOP; \
-	bspc desktop -f $DESKTOP
+	bspc node -d $DESKTOP --follow
 
 # kill window
 alt + q
@@ -75,12 +74,8 @@ alt + h
 	kitty --class "popup_l" htop
 
 # mpv clipboard
-alt + v
-	START=$(bspc query -D -d focused --names); \
-	VIDEO=3; \
-	bspc desktop -f $VIDEO; \
-	xclip -selection clipboard -o | xargs mpv --fs --profile=1080p; \
-	bspc desktop -f $START
+alt + {_,shift + }v
+	~/.scripts/util/mpv.sh {focus,stay}
 
 ## dunst
 # close all dunst notifications
@@ -112,6 +107,11 @@ super + shift + 3
 # select frame
 super + shift + 4
 	~/.scripts/util/screenshot.sh select
+
+# get active window name
+alt + shift + w
+	NAME=$(xdotool getactivewindow getwindowname); \
+	dunstify "Window name: $NAME" -a "ignorehistory" -u low -t 0 -r 9988
 
 # close and kill
 # super + {_,shift + }w
