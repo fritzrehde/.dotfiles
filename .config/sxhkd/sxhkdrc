@@ -67,7 +67,7 @@ alt + shift + t
 
 # extra
 alt + e
-	kitty --hold --class "popup_s" ~/.scripts/util/extra.sh
+	~/.scripts/util/extra.sh
 
 # htop
 alt + h

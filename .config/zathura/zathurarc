@@ -1,1 +1,11 @@
+map r reload
+map f toggle_fullscreen
+map m toggle_statusbar
 map = zoom in
+
+map j navigate next
+map k navigate previous
+map H scroll left
+map J scroll down
+map K scroll up
+map L scroll right
