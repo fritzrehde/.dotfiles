@@ -29,13 +29,16 @@ alt + q
 
 # focus on next window in same workspace
 alt + Tab
-	bspc node -f next.local.window
+	~/.scripts/bspwm/alt_tab.sh
+
+# switch position of two split windows
+alt + {Left,Right}
+	bspc node --swap next.local.window --follow
 
 # fullscreen
 # alt + f
 	# bspc node -t fullscreen
 
-## rofi
 # rofi apps
 alt + d
 	rofi -show drun
@@ -75,9 +78,8 @@ alt + h
 
 # mpv clipboard
 alt + {_,shift + }v
-	~/.scripts/util/mpv.sh {focus,stay}
+	~/.scripts/tools/mpv.sh {focus,stay}
 
-## dunst
 # close all dunst notifications
 alt + w
 	dunstctl close
@@ -94,17 +96,15 @@ alt + j
 alt + m
 	~/.scripts/notify/changevolume.sh mute
 
-## tmux
 # Kill current tmux session
 super + q
 	~/.scripts/tmux/kill_session.sh
 
-## screenshots
-# whole screen
+# screenshot whole screen
 super + shift + 3
 	~/.scripts/util/screenshot.sh
 
-# select frame
+# screenshot select frame
 super + shift + 4
 	~/.scripts/util/screenshot.sh select
 
@@ -112,6 +112,10 @@ super + shift + 4
 alt + shift + w
 	NAME=$(xdotool getactivewindow getwindowname); \
 	dunstify "Window name: $NAME" -a "ignorehistory" -u low -t 0 -r 9988
+
+# get time
+alt + s
+	~/.scripts/util/time.sh
 
 # close and kill
 # super + {_,shift + }w

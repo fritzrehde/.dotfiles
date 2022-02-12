@@ -1,9 +1,10 @@
 # Aliases ----------------------------------------------------------------------
-alias z="source ~/.zshrc"
+alias Z="source ~/.zshrc"
 alias c="clear"
 alias ct="clear; exa --tree"
 alias ..="cd .."
 alias update="sudo pacman -Syu"
+alias yy="fc -ln -1 | tr -d '\n' | xclip -selection clipboard -i"
 
 ## Shell scripts
 alias n='~/.scripts/nvim/nvim.sh'
@@ -11,6 +12,7 @@ alias t='~/.scripts/tmux/tmux.sh'
 alias gq='~/.scripts/git/gitquick.sh'
 alias tab='~/.scripts/util/tab.sh'
 alias dot='~/.scripts/git/dotfiles.sh'
+alias z='~/.scripts/tools/zathura.sh'
 #-------------------------------------------------------------------------------
 
 # Functions --------------------------------------------------------------------
