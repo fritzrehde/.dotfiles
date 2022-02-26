@@ -2,6 +2,10 @@
 set guioptions none
 set selection-clipboard clipboard
 
+# colors
+set statusbar-bg "#2e3440"
+set statusbar-fg "#d8dee9"
+
 # bindings
 map r reload
 # TODO: disable bspwm zathura rule temporarily

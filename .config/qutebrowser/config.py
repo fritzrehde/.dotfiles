@@ -138,8 +138,18 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+
+# Search Engines
+c.url.searchengines['github'] = 'https://github.com/search?q={}'
+c.url.searchengines['google'] = 'https://google.com/search?q={}'
+c.url.searchengines['yt'] = 'https://youtube.com/search?q={}'
+
+# Colors
+config.source('colors.py')
+c.colors.webpage.darkmode.enabled = True
+
 # Keybindings
-config.bind('R', 'config-source')
+config.bind('<Meta-r>', 'config-source')
 # config.bind('R', 'config-source; message-info Config reloaded')
 
 ## Zoom
@@ -154,9 +164,11 @@ config.bind('<Meta-j>', 'tab-prev')
 config.bind('<Meta-k>', 'tab-next')
 config.bind('x', 'tab-close')
 config.bind('t', 'set-cmd-text -s :open -t')
+config.bind('<Meta-n>', 'set-cmd-text -s :open -t')
 
 ## Yank
 config.bind('yy', 'yank --quiet url')
+config.bind('yf', 'hint links yank')
 config.bind('yt', 'open --related --tab {url}')
 config.bind('yw', 'open --window {url}')
 
