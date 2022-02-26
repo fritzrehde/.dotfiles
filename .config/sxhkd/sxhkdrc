@@ -4,7 +4,7 @@ alt + Return
 
 # open browser
 alt + BackSpace
-	firefox
+	qutebrowser
 
 # reload sxhkd
 alt + r
@@ -62,7 +62,6 @@ alt + i
 # todo add
 alt + n
 	alacritty --class popup_xs,popup_xs -e ~/.scripts/todo/todo_add.sh
-	# kitty --class "popup_xs" ~/.scripts/todo/todo_add.sh
 
 # timer
 alt + shift + t
@@ -78,23 +77,18 @@ alt + h
 
 # mpv clipboard
 alt + {_,shift + }v
-	~/.scripts/tools/mpv.sh {focus,stay}
+	~/.scripts/tools/mpv.sh {focus, stay}
 
 # close all dunst notifications
 alt + w
 	dunstctl close
 
-# increase volume
-alt + k
-	~/.scripts/notify/changevolume.sh up
+# volume control
+alt + {k, j, m}
+	~/.scripts/notify/changevolume.sh {up, down, mute}
 
-# decrease volume
-alt + j
-	~/.scripts/notify/changevolume.sh down
-
-# decrease volume
-alt + m
-	~/.scripts/notify/changevolume.sh mute
+{XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
+	~/.scripts/notify/changevolume.sh {up, down, mute}
 
 # Kill current tmux session
 super + q
@@ -116,6 +110,12 @@ alt + shift + w
 # get time
 alt + s
 	~/.scripts/util/time.sh
+
+# tmux
+# super + j
+	# tmux previous-window
+# super + k
+	# tmux next-window
 
 # close and kill
 # super + {_,shift + }w

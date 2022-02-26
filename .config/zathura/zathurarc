@@ -4,6 +4,8 @@ set selection-clipboard clipboard
 
 # bindings
 map r reload
+# TODO: disable bspwm zathura rule temporarily
+map y exec 'zathura "%"'
 
 ## gui
 map m toggle_statusbar

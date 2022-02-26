@@ -17,6 +17,6 @@ bspc config gapless_monocle true
 bspc rule -a popup_xs state=floating focus=on rectangle=600x80+383+64
 bspc rule -a popup_s state=floating focus=on rectangle=600x660+383+64
 bspc rule -a popup_l state=floating focus=on rectangle=600x680+383+44
-bspc rule -a Zathura state=tiled desktop=any.!occupied
+bspc rule -a Zathura state=tiled focus=on desktop=any.!occupied
 bspc rule -a Discord desktop=any.!occupied
 bspc rule -a mpv desktop=any.!occupied
