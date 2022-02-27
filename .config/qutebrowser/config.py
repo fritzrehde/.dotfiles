@@ -139,6 +139,7 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 
+config.set('content.javascript.can_access_clipboard', True)
 c.editor.command = ['nvim', '{file}']
 c.messages.timeout = 1000
 
@@ -153,6 +154,8 @@ c.url.searchengines['google'] = 'https://google.com/search?q={}'
 # Colors
 config.source('colors.py')
 c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+c.tabs.show = 'multiple'
 
 # Keybindings
 config.bind('<Meta-r>', 'config-source ;; message-info "qutebrowser reloaded"')
@@ -174,6 +177,7 @@ config.bind('<Meta-Left>', 'tab-move -')
 config.bind('<Meta-Right>', 'tab-move +')
 config.bind('x', 'tab-close')
 config.bind('<Meta-n>', 'set-cmd-text -s :open -t')
+config.bind('<Meta-b>', 'set-cmd-text -s :quickmark-load -t')
 
 ## Yank
 config.bind('yy', 'yank --quiet url')
@@ -188,3 +192,7 @@ config.bind('L', 'forward')
 ## Hints
 config.bind('i', 'hint --first inputs')
 config.bind('I', 'hint inputs')
+config.bind('q', 'jseval -q document.activeElement.blur()')
+config.bind('<Escape>', 'mode-leave ;; jseval -q document.activeElement.blur()', mode='insert')
+
+## Modes
