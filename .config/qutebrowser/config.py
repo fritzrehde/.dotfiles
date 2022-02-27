@@ -139,31 +139,40 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 
+c.editor.command = ['nvim', '{file}']
+c.messages.timeout = 1000
+
+# Statusbar
+c.statusbar.widgets = ['url', 'scroll', 'progress']
+
 # Search Engines
-c.url.searchengines['github'] = 'https://github.com/search?q={}'
-c.url.searchengines['google'] = 'https://google.com/search?q={}'
+c.url.searchengines['gh'] = 'https://github.com/search?q={}'
 c.url.searchengines['yt'] = 'https://youtube.com/search?q={}'
+c.url.searchengines['google'] = 'https://google.com/search?q={}'
 
 # Colors
 config.source('colors.py')
 c.colors.webpage.darkmode.enabled = True
 
 # Keybindings
-config.bind('<Meta-r>', 'config-source')
-# config.bind('R', 'config-source; message-info Config reloaded')
+config.bind('<Meta-r>', 'config-source ;; message-info "qutebrowser reloaded"')
 
 ## Zoom
 config.bind('-', 'zoom-out')
 config.bind('=', 'zoom-in')
 config.bind('0', 'zoom')
+config.bind('<Alt-f>', 'fullscreen')
+
+## Scrolling
+config.bind('J', 'scroll-page 0 1')
+config.bind('K', 'scroll-page 0 -1')
 
 ## Tabs
-config.bind('J', 'tab-prev')
-config.bind('K', 'tab-next')
 config.bind('<Meta-j>', 'tab-prev')
 config.bind('<Meta-k>', 'tab-next')
+config.bind('<Meta-Left>', 'tab-move -')
+config.bind('<Meta-Right>', 'tab-move +')
 config.bind('x', 'tab-close')
-config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('<Meta-n>', 'set-cmd-text -s :open -t')
 
 ## Yank
@@ -172,5 +181,10 @@ config.bind('yf', 'hint links yank')
 config.bind('yt', 'open --related --tab {url}')
 config.bind('yw', 'open --window {url}')
 
+## History
+config.bind('H', 'back')
+config.bind('L', 'forward')
+
 ## Hints
-# open link in new tab and follow
+config.bind('i', 'hint --first inputs')
+config.bind('I', 'hint inputs')

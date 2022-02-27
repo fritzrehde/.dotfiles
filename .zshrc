@@ -30,7 +30,7 @@ export CM_MAX_CLIPS=10
 #-------------------------------------------------------------------------------
 
 # Prompt -----------------------------------------------------------------------
-PROMPT='%F{#626b85}%n@%m%f %F{#8FAAC9}%~%f%F{#AEC694}$(git_branch)%f %F{#AEC694}>%f '
+PROMPT='%F{#616E88}%n@%m%f %F{#8FAAC9}%~%f%F{#AEC694}$(git_branch)%f %F{#AEC694}>%f '
 setopt PROMPT_SUBST
 function git_branch() { git symbolic-ref --short HEAD 2> /dev/null | sed -n -e 's/.*/ (&)/p' ;}
 #-------------------------------------------------------------------------------

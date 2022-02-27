@@ -76,7 +76,7 @@ alt + h
 	kitty --class "popup_l" htop
 
 # mpv clipboard
-alt + {_,shift + }v
+alt + {_, shift + }v
 	~/.scripts/tools/mpv.sh {focus, stay}
 
 # close all dunst notifications
@@ -94,13 +94,9 @@ alt + {k, j, m}
 super + q
 	~/.scripts/tmux/kill_session.sh
 
-# screenshot whole screen
-super + shift + 3
-	~/.scripts/util/screenshot.sh
-
-# screenshot select frame
-super + shift + 4
-	~/.scripts/util/screenshot.sh select
+# screenshots
+super + shift + {3, 4}
+	~/.scripts/util/screenshot.sh {_, select}
 
 # get active window name
 alt + shift + w
