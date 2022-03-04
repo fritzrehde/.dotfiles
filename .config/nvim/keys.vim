@@ -10,6 +10,10 @@ nnoremap N Nzz
 " redo
 nnoremap U <C-r>
 
+" page up/down
+nnoremap J <C-d>
+nnoremap K <C-u>
+
 " commenting
 nnoremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>

@@ -1,4 +1,6 @@
 set hidden on
+map J updir; down; open
+map K updir; up; open
 map R reload
 map v toggle
 map <esc> unselect

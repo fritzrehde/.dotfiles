@@ -149,7 +149,7 @@ c.statusbar.widgets = ['url', 'scroll', 'progress']
 # Search Engines
 c.url.searchengines['gh'] = 'https://github.com/search?q={}'
 c.url.searchengines['yt'] = 'https://youtube.com/search?q={}'
-c.url.searchengines['google'] = 'https://google.com/search?q={}'
+c.url.searchengines['go'] = 'https://google.com/search?q={}'
 
 # Colors
 config.source('colors.py')
