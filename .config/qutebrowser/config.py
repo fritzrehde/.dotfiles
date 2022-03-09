@@ -139,17 +139,24 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 
+# Settings
 config.set('content.javascript.can_access_clipboard', True)
 c.editor.command = ['nvim', '{file}']
 c.messages.timeout = 1000
 
-# Statusbar
+## Statusbar
 c.statusbar.widgets = ['url', 'scroll', 'progress']
 
-# Search Engines
+## Search Engines
 c.url.searchengines['gh'] = 'https://github.com/search?q={}'
 c.url.searchengines['yt'] = 'https://youtube.com/search?q={}'
 c.url.searchengines['go'] = 'https://google.com/search?q={}'
+
+## Downloads
+c.downloads.location.directory = '~/Downloads'
+c.downloads.location.prompt = False
+c.downloads.position = 'bottom'
+c.downloads.remove_finished = 0
 
 # Colors
 config.source('colors.py')
@@ -159,6 +166,7 @@ c.tabs.show = 'multiple'
 
 # Keybindings
 config.bind('<Meta-r>', 'config-source ;; message-info "qutebrowser reloaded"')
+config.bind('<Meta-p>', 'spawn --userscript qute-pass')
 
 ## Zoom
 config.bind('-', 'zoom-out')

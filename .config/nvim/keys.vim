@@ -1,7 +1,8 @@
 let mapleader=","
 
 " copy line without line break
-nnoremap Y mQ^y$`Q
+nnoremap Y y$
+" nnoremap Y mQ^y$`Q
 
 " align search results in middle
 nnoremap n nzz
