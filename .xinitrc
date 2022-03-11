@@ -35,5 +35,6 @@ clipmenud &
 dunst &
 redshift &
 unclutter --start-hidden --timeout 1 &
+xss-lock -- i3lock -u -c 000000 &
 feh --no-fehbg --bg-scale ~/.wallpapers/macos_mojave_night.jpg
 exec bspwm
