@@ -11,8 +11,8 @@ alias open="xdg-open"
 alias n='~/.scripts/nvim/nvim.sh'
 alias t='~/.scripts/tmux/tmux.sh'
 alias gq='~/.scripts/git/gitquick.sh'
-alias tab='~/.scripts/util/tab.sh'
-alias dot='~/.scripts/git/dotfiles.sh'
+alias tab='tab.sh'
+alias dot='dotfiles.sh'
 #-------------------------------------------------------------------------------
 
 # Functions --------------------------------------------------------------------
@@ -20,6 +20,9 @@ function gc() { git clone -q "$1"; cd $(basename "$1" | sed -e 's/.git//g'); cle
 #-------------------------------------------------------------------------------
 
 # Variables --------------------------------------------------------------------
+export PATH=~/.local/bin:$PATH
+# export SXHKD_SHELL=/bin/bash
+export SHELL=/bin/zsh
 export EDITOR=nvim
 
 ## Clipmenu

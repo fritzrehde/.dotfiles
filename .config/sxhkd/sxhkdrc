@@ -53,23 +53,23 @@ alt + Escape
 
 # todo list
 alt + t
-	kitty --class "popup_s" /bin/zsh -ic ~/.scripts/todo/todo_do.sh
+	kitty --class "popup_s" /bin/zsh -ic todo_do.sh
 
 # todo prio
 alt + i
-	kitty --class "popup_s" /bin/zsh -ic ~/.scripts/todo/todo_prio.sh
+	kitty --class "popup_s" /bin/zsh -ic todo_prio.sh
 
 # todo add
 alt + n
-	alacritty --class popup_xs,popup_xs -e ~/.scripts/todo/todo_add.sh
+	alacritty --class popup_xs,popup_xs -e /bin/zsh -ic todo_add.sh
 
 # timer
 alt + shift + t
-	alacritty --class popup_xs,popup_xs -e ~/.scripts/notify/timer_init.sh
+	alacritty --class popup_xs,popup_xs -e timer_init.sh
 
 # extra
 alt + e
-	~/.scripts/util/extra.sh
+	extra.sh
 
 # htop
 alt + h
@@ -105,11 +105,7 @@ alt + s
 
 # tmux
 alt + y
-	xte 'key k'
-	# xdotool key k
-	# xdotool key super+j
-	# xte 'keydown Super_L' 'keydown j' 'keyup j' 'keyup Super_L'
-	# xdotool key --window getwindowfocus meta+n
+	xte 'keyup Alt_L' 'keyup y' 'keydown Super_L' 'keydown j' 'keyup Super_L' 'keyup j' 'keydown Alt_L'
 # super + j
 	# ~/.scripts/keybind.sh "super+j" "tmux previous-window"
 # super + k
