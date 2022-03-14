@@ -29,7 +29,7 @@ alt + q
 
 # focus on next window in same workspace
 alt + Tab
-	~/.scripts/bspwm/alt_tab.sh
+	bspc node --focus next.local.window
 
 # switch position of two split windows
 alt + {Left,Right}
@@ -41,89 +41,81 @@ alt + {Left,Right}
 
 # rofi apps
 alt + d
-	rofi -show drun
+	rofi -show drun -theme ~/.config/rofi/themes/icons.rasi
+
+# rofi script launcher
+alt + s
+	rofi-scripts.sh
 
 # rofi clipmenu
 alt + p
-	/bin/zsh -ic "clipmenu -theme ~/.config/rofi/themes/clipmenu.rasi"
+	/bin/zsh -ic "clipmenu -theme ~/.config/rofi/themes/default.rasi"
 
 # rofi power
 alt + Escape
-	~/.scripts/rofi/rofipower.sh
+	rofi-power.sh
 
 # todo list
 alt + t
-	kitty --class "popup_s" /bin/zsh -ic todo_do.sh
+	st -c popup_s -e /bin/zsh -ic todo-do.sh
 
 # todo prio
 alt + i
-	kitty --class "popup_s" /bin/zsh -ic todo_prio.sh
+	st -c popup_s -e /bin/zsh -ic todo-prio.sh
 
 # todo add
 alt + n
-	alacritty --class popup_xs,popup_xs -e /bin/zsh -ic todo_add.sh
+	st -c popup_xs -e ~/.local/bin/todo-add.sh
 
 # timer
 alt + shift + t
 	alacritty --class popup_xs,popup_xs -e timer_init.sh
 
-# extra
-alt + e
-	extra.sh
-
-# htop
-alt + h
-	kitty --class "popup_l" htop
-
 # mpv clipboard
 alt + {_, shift + }v
-	~/.scripts/tools/mpv.sh {focus, stay}
+	mpv.sh {focus, stay}
 
-# close all dunst notifications
+# close dunst notification
 alt + w
-	dunstctl close
+	dunstctl close-all
 
 # volume control
 alt + {k, j, m}
-	~/.scripts/notify/changevolume.sh {up, down, mute}
+	changevolume.sh {up, down, mute}
 
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
-	~/.scripts/notify/changevolume.sh {up, down, mute}
+	changevolume.sh {up, down, mute}
 
 # screenshots
 super + shift + {3, 4}
-	~/.scripts/util/screenshot.sh {_, select}
+	screenshot.sh {_, select}
 
 # get active window name
 alt + shift + w
 	NAME=$(xdotool getactivewindow getwindowname); \
 	dunstify "Window name: $NAME" -a "ignorehistory" -u low -t 0 -r 9988
 
-# get time
-alt + s
-	~/.scripts/util/time.sh
-
 # tmux
 alt + y
-	xte 'keyup Alt_L' 'keyup y' 'keydown Super_L' 'keydown j' 'keyup Super_L' 'keyup j' 'keydown Alt_L'
+	xte 'keyup Alt_L' 'keyup y' 'keydown Super_L' 'keydown j' 'keyup j' 'keyup Super_L' 'keydown Alt_L'
 # super + j
 	# ~/.scripts/keybind.sh "super+j" "tmux previous-window"
 # super + k
 	# ~/.scripts/keybind.sh "super+k" "tmux next-window"
 super + q
-	~/.scripts/tmux/kill_session.sh
+	tmux-kill-session.sh
 super + a ; m
 	tmux command-prompt -p "man" "new-window -a man '%1'"
 super + a ; r
 	tmux source-file ~/.tmux.conf; tmux display-message -d 150 "tmux reloaded"
 super + a ; n
-	tmux display-popup -w 80% -h 60% -E '~/.scripts/fzf/fzf_nvim.sh'
+	tmux display-popup -w 80% -h 60% -E 'fzf_nvim.sh'
 super + a ; N
-	tmux display-popup -w 50% -h 60% -E '~/.scripts/fzf/fzf_nvim_config.sh'
+	tmux display-popup -w 50% -h 60% -E 'fzf_nvim_config.sh'
 super + a ; c
-	tmux display-popup -w 100% -h 60% -E '~/.scripts/fzf/fzf_cd.sh'
+	tmux display-popup -w 100% -h 60% -E 'fzf_cd.sh'
 super + a ; s
-	tmux display-popup -w 50% -h 60% -E '~/.scripts/tmux/switch_session.sh'
+	tmux display-popup -w 50% -h 60% -E 'tmux-switch-session.sh'
 super + a ; Escape
 	tmux copy-mode
 

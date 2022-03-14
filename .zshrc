@@ -8,9 +8,9 @@ alias yy="fc -ln -1 | tr -d '\n' | xclip -selection clipboard -i"
 alias open="xdg-open"
 
 ## Shell scripts
-alias n='~/.scripts/nvim/nvim.sh'
-alias t='~/.scripts/tmux/tmux.sh'
-alias gq='~/.scripts/git/gitquick.sh'
+alias n='nvim.sh'
+alias t='tmux-startup.sh'
+alias gq='gitquick.sh'
 alias tab='tab.sh'
 alias dot='dotfiles.sh'
 #-------------------------------------------------------------------------------

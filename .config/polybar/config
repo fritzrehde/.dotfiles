@@ -97,7 +97,7 @@ format-disconnected =
 [module/cpu_temp]
 type = custom/script
 interval = 10
-exec = ~/.scripts/bar/cpu_temp.sh
+exec = ~/.local/bin/cpu-temp.sh
 format-prefix = "﨎 "
 format-suffix = "°"
 
@@ -105,7 +105,7 @@ format-suffix = "°"
 [module/ram_used]
 type = custom/script
 interval = 10
-exec = ~/.scripts/bar/ram_used.sh
+exec = ~/.local/bin/ram-used.sh
 format-prefix = " "
 format-suffix = " GB"
 
@@ -113,13 +113,13 @@ format-suffix = " GB"
 [module/bluetooth]
 type = custom/script
 interval = 10
-exec = ~/.scripts/bar/bluetooth.sh
+exec = ~/.local/bin/bluetooth.sh
 
 
 [module/battery]
 type = custom/script
 interval = 10
-exec = ~/.scripts/bar/battery.sh
+exec = ~/.local/bin/battery.sh
 click-left = "pkill -USR1 -x sxhkd; dunstify 'sxhkd reloaded' -a 'ignorehistory' -t 500 -r 9997"
 
 
