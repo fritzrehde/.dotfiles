@@ -6,15 +6,20 @@ Dotfiles are the configuration files that are used to personalise Unix-based sys
 This repository contains my personal dotfiles. They are stored here for convenience so that I can quickly access them on new machines. Also, others may find some of my configurations helpful in customising their own dotfiles.
 
 ## Featured applications
-* [neovim](https://github.com/neovim/neovim): [`nvim/`](../.config/nvim)
-* [tmux](https://github.com/tmux/tmux): [`.tmux.conf`](../.tmux.conf)
-* [zsh](https://www.zsh.org/): [`.zshrc`](../.zshrc)
-* [kitty](https://github.com/kovidgoyal/kitty): [`kitty.conf`](../.config/kitty/kitty.conf)
+* [neovim](https://github.com/neovim/neovim): [`nvim/`](../.config/nvim): text editor
+* [tmux](https://github.com/tmux/tmux): [`.tmux.conf`](../.tmux.conf): terminal multiplexer
+* [bspwm](https://github.com/baskerville/bspwm) [`bspwmrc`](../.config/bspwm/bspwmrc): tiling window manager
+* [qutebrowser](https://github.com/qutebrowser/qutebrowser) [`qutebrowser/config.py`](../.config/qutebrowser/config.py): keyboard-driven, vim-like browser
+* [dunst](https://github.com/dunst-project/dunst) [`dunstrc`](../.config/dunst/dunstrc): notification daemon
+* [kitty](https://github.com/kovidgoyal/kitty) [`kitty.conf`](../.config/kitty/kitty.conf): terminal
+* [zsh](https://www.zsh.org/) [`.zshrc`](../.zshrc): shell
 
-## Some other CLI tools I use
+## Some other cool tools I use
+* [zathura](https://github.com/pwmt/zathura): customizable document viewer
 * [fzf](https://github.com/junegunn/fzf): fuzzy finder
 * [todo.sh](https://github.com/todotxt/todo.txt-cli): minimal todo list
-* [wttr.in](https://github.com/chubin/wttr.in): weather forecast
+* [rofi](https://github.com/davatorium/rofi): modern dmenu alternative
+* [ly](https://github.com/fairyglade/ly): minimalist TUI display manager
 
 ## How to store dotfiles in a git repository
 Here is the article that I used to set up this git repository: https://www.atlassian.com/git/tutorials/dotfiles
