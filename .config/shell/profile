@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export PATH=~/.local/bin:$PATH
+
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="qutebrowser"
+
+# Clipmenu
+export CM_LAUNCHER=rofi
+export CM_OUPUT_CLIP=0
+export CM_MAX_CLIPS=10

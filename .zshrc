@@ -19,18 +19,6 @@ alias dot='dotfiles.sh'
 function gc() { git clone -q "$1"; cd $(basename "$1" | sed -e 's/.git//g'); clear; exa --tree ;}
 #-------------------------------------------------------------------------------
 
-# Variables --------------------------------------------------------------------
-export PATH=~/.local/bin:$PATH
-# export SXHKD_SHELL=/bin/bash
-export SHELL=/bin/zsh
-export EDITOR=nvim
-
-## Clipmenu
-export CM_LAUNCHER=rofi
-export CM_OUPUT_CLIP=0
-export CM_MAX_CLIPS=10
-#-------------------------------------------------------------------------------
-
 # Prompt -----------------------------------------------------------------------
 PROMPT='%F{#616E88}%n@%m%f %F{#8FAAC9}%~%f%F{#AEC694}$(git_branch)%f %F{#AEC694}>%f '
 setopt PROMPT_SUBST
