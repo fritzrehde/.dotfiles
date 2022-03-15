@@ -1,4 +1,4 @@
-include mainrc
+include main
 
 map w exec 'bash -ic "~/.scripts/zathura/zathura-mode.sh % alt"'
 

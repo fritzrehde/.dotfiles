@@ -109,9 +109,9 @@ super + a ; m
 super + a ; r
 	tmux source-file ~/.tmux.conf; tmux display-message -d 150 "tmux reloaded"
 super + a ; n
-	tmux display-popup -w 80% -h 60% -E 'fzf_nvim.sh'
+	tmux display-popup -w 80% -h 60% -E "fzf-nvim.sh"
 super + a ; N
-	tmux display-popup -w 50% -h 60% -E 'fzf_nvim_config.sh'
+	tmux display-popup -w 50% -h 60% -E 'fzf-nvim.sh config'
 super + a ; c
 	tmux display-popup -w 100% -h 60% -E 'fzf_cd.sh'
 super + a ; s

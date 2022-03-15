@@ -63,27 +63,3 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case sensitivity
 
 # opam configuration
 [[ ! -r /home/fritz/.opam/opam-init/init.zsh ]] || source /home/fritz/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# Tools ------------------------------------------------------------------------
-## fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_BINDINGS="--bind='tab:toggle+down' \
-	--bind='P:toggle-preview' \
-	--bind='J:down' \
-	--bind='K:up' \
-	--bind='btab:toggle+clear-query+first' \
-	--bind='A:toggle-all'"
-export FZF_DEFAULT_OPTS="$FZF_BINDINGS \
-	--multi \
-	--reverse \
-	--no-info \
-	--preview-window=65%,hidden,border-sharp \
-	--color=border:#444B5D \
-		--color=prompt:#AEC694 \
-		--color=pointer:#8FAAC9 \
-		--color=gutter:#2e3440 \
-		--color=bg+:#444B5D \
-		--color=marker:red \
-		--color=header:#8FAAC9 \
-		--color=query:regular"
-#-------------------------------------------------------------------------------

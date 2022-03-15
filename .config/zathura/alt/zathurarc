@@ -1,0 +1,8 @@
+include ../main
+
+map w exec 'bash -ic "~/.scripts/zathura/zathura-mode.sh % main"'
+
+map j scroll down
+map k scroll up
+map J navigate next
+map K navigate previous
