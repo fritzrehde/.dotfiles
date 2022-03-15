@@ -6,8 +6,8 @@ Dotfiles are the configuration files that are used to personalise Unix-based sys
 This repository contains my personal dotfiles. They are stored here for convenience so that I can quickly access them on new machines. Also, others may find some of my configurations helpful in customising their own dotfiles.
 
 ## Featured applications
-* [neovim](https://github.com/neovim/neovim): [`nvim/`](../.config/nvim): text editor
-* [tmux](https://github.com/tmux/tmux): [`.tmux.conf`](../.tmux.conf): terminal multiplexer
+* [neovim](https://github.com/neovim/neovim) [`nvim/`](../.config/nvim): text editor
+* [tmux](https://github.com/tmux/tmux) [`.tmux.conf`](../.tmux.conf): terminal multiplexer
 * [bspwm](https://github.com/baskerville/bspwm) [`bspwmrc`](../.config/bspwm/bspwmrc): tiling window manager
 * [qutebrowser](https://github.com/qutebrowser/qutebrowser) [`qutebrowser/config.py`](../.config/qutebrowser/config.py): keyboard-driven, vim-like browser
 * [dunst](https://github.com/dunst-project/dunst) [`dunstrc`](../.config/dunst/dunstrc): notification daemon
