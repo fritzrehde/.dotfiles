@@ -6,7 +6,7 @@ Dotfiles are the configuration files that are used to personalise Unix-based sys
 This repository contains my personal dotfiles. They are stored here for convenience so that I can quickly access them on new machines. Also, others may find some of my configurations helpful in customising their own dotfiles.
 
 ## Featured applications
-| Name | Config file | Description |
+| Name | Description | Config file |
 | ---- | ----------- | ----------- |
 | [neovim](https://github.com/neovim/neovim) | text editor | [`nvim/`](../.config/nvim) |
 | [tmux](https://github.com/tmux/tmux) | terminal multiplexer | [`.tmux.conf`](../.tmux.conf) |
