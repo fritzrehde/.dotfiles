@@ -20,11 +20,11 @@ This repository contains my personal dotfiles. They are stored here for convenie
 ## Some other cool tools I use
 | Name | Description |
 | ---- | ----------- |
-| [zathura](https://github.com/pwmt/zathura) | customisable (pdf) document viewer |
+| [zathura](https://github.com/pwmt/zathura) | document viewer |
 | [fzf](https://github.com/junegunn/fzf) | fuzzy finder |
 | [todo.sh](https://github.com/todotxt/todo.txt-cli) | minimal todo list |
 | [rofi](https://github.com/davatorium/rofi) | modern dmenu alternative |
-| [ly](https://github.com/fairyglade/ly) | minimalist TUI display manager |
+| [ly](https://github.com/fairyglade/ly) | TUI display manager |
 
 ## How to store dotfiles in a git repository
 Here is the article that I used to set up this git repository: https://www.atlassian.com/git/tutorials/dotfiles
