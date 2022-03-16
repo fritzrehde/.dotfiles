@@ -1,5 +1,5 @@
 # Dotfiles
-![Example Setup](screenshot.png)
+<img src="https://raw.githubusercontent.com/fritzrehde/i/master/dotfiles/dotfiles-screenshot.png">
 
 ## What are dotfiles?
 Dotfiles are the configuration files that are used to personalise Unix-based systems. Dotfiles are hidden files or directories which have names that start with a dot/period.\
