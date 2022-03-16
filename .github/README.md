@@ -14,7 +14,8 @@ This repository contains my personal dotfiles. They are stored here for convenie
 * [kitty](https://github.com/kovidgoyal/kitty) [`kitty.conf`](../.config/kitty/kitty.conf): terminal
 * [zsh](https://www.zsh.org/) [`.zshrc`](../.zshrc): shell
 
-| ------------------------------------------ | -------------------------- | ----------- |
+| App | Config file | Description |
+| --- | ----------- | ----------- |
 | [neovim](https://github.com/neovim/neovim) | [`nvim/`](../.config/nvim) | text editor |
 | [tmux](https://github.com/tmux/tmux) | [`.tmux.conf`](../.tmux.conf) | terminal multiplexer |
 | [bspwm](https://github.com/baskerville/bspwm) | [`bspwmrc`](../.config/bspwm/bspwmrc) | tiling window manager |
