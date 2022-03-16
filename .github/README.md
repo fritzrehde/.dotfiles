@@ -14,6 +14,15 @@ This repository contains my personal dotfiles. They are stored here for convenie
 * [kitty](https://github.com/kovidgoyal/kitty) [`kitty.conf`](../.config/kitty/kitty.conf): terminal
 * [zsh](https://www.zsh.org/) [`.zshrc`](../.zshrc): shell
 
+| ------------------------------------------ | -------------------------- | ----------- |
+| [neovim](https://github.com/neovim/neovim) | [`nvim/`](../.config/nvim) | text editor |
+| [tmux](https://github.com/tmux/tmux) | [`.tmux.conf`](../.tmux.conf) | terminal multiplexer |
+| [bspwm](https://github.com/baskerville/bspwm) | [`bspwmrc`](../.config/bspwm/bspwmrc) | tiling window manager |
+| [qutebrowser](https://github.com/qutebrowser/qutebrowser) | [`qutebrowser/config.py`](../.config/qutebrowser/config.py) | keyboard-driven, vim-like browser |
+| [dunst](https://github.com/dunst-project/dunst) | [`dunstrc`](../.config/dunst/dunstrc) | notification daemon |
+| [kitty](https://github.com/kovidgoyal/kitty) | [`kitty.conf`](../.config/kitty/kitty.conf) | terminal |
+| [zsh](https://www.zsh.org/) | [`.zshrc`](../.zshrc) | shell |
+
 ## Some other cool tools I use
 * [zathura](https://github.com/pwmt/zathura): customizable document viewer
 * [fzf](https://github.com/junegunn/fzf): fuzzy finder
