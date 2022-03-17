@@ -15,9 +15,10 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # colors
 config.source('colors.py')
+c.tabs.show = 'multiple'
+c.colors.webpage.bg = 'black'
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
-c.tabs.show = 'multiple'
 
 # settings
 config.set('content.javascript.can_access_clipboard', True)
@@ -77,3 +78,7 @@ config.bind('i', 'hint --first inputs')
 config.bind('I', 'hint inputs')
 config.bind('q', 'jseval -q document.activeElement.blur()')
 config.bind('<Escape>', 'mode-leave ;; jseval -q document.activeElement.blur()', mode='insert')
+
+## marks
+config.bind('M', 'set-cmd-text -s :set-mark')
+config.bind('m', 'set-cmd-text -s :jump-mark')
