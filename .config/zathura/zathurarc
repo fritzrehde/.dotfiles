@@ -1,6 +1,6 @@
 include main
 
-map w exec 'bash -ic "~/.scripts/zathura/zathura-mode.sh % alt"'
+map w exec 'bash -ic "~/.local/bin/zathura-mode.sh $FILE alt"'
 
 map j navigate next
 map k navigate previous

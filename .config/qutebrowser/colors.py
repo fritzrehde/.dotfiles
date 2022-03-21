@@ -5,7 +5,7 @@ white = "#d8dee9"
 green = "#AEC694"
 lime = "#92d64a"
 red = "#bf616a"
-red2 = "#c62132"
+red2 = "#e10600"
 blue = "#8FAAC9"
 
 # completion
