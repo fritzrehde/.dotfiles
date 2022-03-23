@@ -10,7 +10,7 @@ set statusbar-fg "#d8dee9"
 map r reload
 map R rotate
 # TODO: disable bspwm zathura rule temporarily
-map y exec 'zathura "%"'
+map y exec 'zathura $FILE'
 
 ## gui
 map m toggle_statusbar

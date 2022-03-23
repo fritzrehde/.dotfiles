@@ -13,6 +13,7 @@ alias t='tmux-startup.sh'
 alias gq='gitquick.sh'
 alias tab='tab.sh'
 alias dot='dotfiles.sh'
+alias new='new-script.sh'
 #-------------------------------------------------------------------------------
 
 # Functions --------------------------------------------------------------------

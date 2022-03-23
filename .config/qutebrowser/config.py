@@ -45,6 +45,7 @@ c.completion.open_categories = ['quickmarks', 'history']
 # keybindings
 config.bind('<Meta-r>', 'config-source ;; message-info "qutebrowser reloaded"')
 config.bind('<Meta-p>', 'spawn --userscript qute-pass')
+config.bind('<Meta-o>', 'spawn --userscript qute-pass --password-only')
 
 ## zoom
 config.bind('-', 'zoom-out')
