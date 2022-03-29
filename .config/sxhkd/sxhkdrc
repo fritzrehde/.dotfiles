@@ -59,13 +59,13 @@ alt + Escape
 alt + t
 	st -c popup_s -e /bin/zsh -ic todo-do.sh
 
-# todo prio
-alt + i
-	st -c popup_s -e /bin/zsh -ic todo-prio.sh
-
 # todo add
 alt + n
 	st -c popup_xs -e ~/.local/bin/todo-add.sh
+
+# torrents
+alt + e
+	st -c popup_s -e /bin/zsh -ic transmission.sh
 
 # timer
 alt + shift + t
@@ -109,13 +109,13 @@ super + a ; m
 super + a ; r
 	tmux source-file ~/.tmux.conf; tmux display-message -d 150 "tmux reloaded"
 super + a ; n
-	tmux display-popup -w 80% -h 60% -E "fzf-nvim.sh"
+	tmux display-popup -w 80% -h 60% -E "fzf-nvim.sh dir cur"
 super + a ; N
 	tmux display-popup -w 50% -h 60% -E 'fzf-nvim.sh config'
 super + a ; c
 	tmux display-popup -w 100% -h 60% -E 'fzf_cd.sh'
 super + a ; s
-	tmux display-popup -w 50% -h 60% -E 'tmux-switch-session.sh'
+	tmux-switch-session.sh
 super + a ; Escape
 	tmux copy-mode
 

@@ -10,22 +10,23 @@ export CM_LAUNCHER=rofi
 export CM_OUPUT_CLIP=0
 
 # fzf
-export FZF_BINDINGS="--bind='tab:toggle+down' \
-	--bind='P:toggle-preview' \
-	--bind='J:down' \
-	--bind='K:up' \
-	--bind='btab:toggle+clear-query+first' \
-	--bind='A:toggle-all'"
+FZF_BINDINGS="--bind=\
+tab:toggle+down,\
+P:toggle-preview,\
+J:down,\
+K:up,\
+btab:toggle+clear-query+first,\
+A:toggle-all"
 export FZF_DEFAULT_OPTS="$FZF_BINDINGS \
 	--multi \
 	--reverse \
 	--no-info \
 	--preview-window=65%,hidden,border-sharp \
 	--color=border:#444B5D \
-		--color=prompt:#AEC694 \
-		--color=pointer:#8FAAC9 \
-		--color=gutter:#2e3440 \
-		--color=bg+:#444B5D \
-		--color=marker:red \
-		--color=header:#8FAAC9 \
-		--color=query:regular"
+	--color=prompt:#AEC694 \
+	--color=pointer:#8FAAC9 \
+	--color=gutter:#2e3440 \
+	--color=bg+:#444B5D \
+	--color=marker:red \
+	--color=header:#8FAAC9 \
+	--color=query:regular"
