@@ -86,3 +86,7 @@ config.bind('<Escape>', 'mode-leave ;; jseval -q document.activeElement.blur()',
 ## marks
 config.bind('M', 'set-cmd-text -s :set-mark')
 config.bind('m', 'set-cmd-text -s :jump-mark')
+
+## paste
+config.bind('p', 'open -- {clipboard}')
+config.bind('P', 'open -t -- {clipboard}')
