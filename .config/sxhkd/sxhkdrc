@@ -113,7 +113,7 @@ super + a ; n
 super + a ; N
 	tmux display-popup -w 50% -h 60% -E 'fzf-nvim.sh config'
 super + a ; c
-	tmux display-popup -w 100% -h 60% -E 'fzf_cd.sh'
+	tmux display-popup -w 80% -h 60% -E 'fzf-cd.sh'
 super + a ; s
 	tmux-switch-session.sh
 super + a ; Escape

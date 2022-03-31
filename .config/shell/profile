@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=~/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
@@ -15,6 +15,7 @@ tab:toggle+down,\
 P:toggle-preview,\
 J:down,\
 K:up,\
+G:clear-query+first,\
 btab:toggle+clear-query+first,\
 A:toggle-all"
 export FZF_DEFAULT_OPTS="$FZF_BINDINGS \
