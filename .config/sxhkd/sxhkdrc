@@ -1,3 +1,16 @@
+alt + c
+	xte \
+	'keyup Alt_L' 'keyup c' \
+	'keydown Control_L' 'keydown c' \
+	'keyup c' 'keyup Control_L'
+
+alt + v
+	xte \
+	'keyup Alt_L' 'keyup v' \
+	'keydown Control_L' 'keydown v' \
+	'keyup v' 'keyup Control_L' \
+	'keydown Alt_L'
+
 # open terminal
 alt + Return
 	kitty
@@ -8,7 +21,7 @@ alt + BackSpace
 
 # reload sxhkd
 alt + r
-	pkill -USR1 -x sxhkd; dunstify "sxhkd reloaded" -a "ignorehistory" -t 500 -r 9997
+	sxhkd-reload.sh
 
 # reload bspwm
 alt + shift + {q,r}
@@ -35,10 +48,6 @@ alt + Tab
 alt + {Left,Right}
 	bspc node --swap next.local.window --follow
 
-# fullscreen
-# alt + f
-	# bspc node -t fullscreen
-
 # rofi apps
 alt + d
 	rofi -show drun -theme ~/.config/rofi/themes/icons.rasi
@@ -49,7 +58,7 @@ alt + s
 
 # rofi clipmenu
 alt + p
-	/bin/zsh -ic "clipmenu -theme ~/.config/rofi/themes/default.rasi"
+	clipmenu -theme ~/.config/rofi/themes/default.rasi
 
 # rofi power
 alt + Escape
@@ -57,22 +66,22 @@ alt + Escape
 
 # todo list
 alt + t
-	st -c popup_s -e /bin/zsh -ic todo-do.sh
+	st -c popup_s -e todo-do.sh
 
 # todo add
 alt + n
-	st -c popup_xs -e ~/.local/bin/todo-add.sh
+	st -c popup_xs -e todo-add.sh
 
 # torrents
 alt + e
-	st -c popup_s -e /bin/zsh -ic transmission.sh
+	st -c popup_s -e transmission.sh
 
 # timer
 alt + shift + t
 	alacritty --class popup_xs,popup_xs -e timer_init.sh
 
 # mpv clipboard
-alt + {_, shift + }v
+alt + {_, shift + }y
 	mpv.sh {focus, stay}
 
 # close dunst notification
@@ -96,8 +105,8 @@ alt + shift + w
 	dunstify "Window name: $NAME" -a "ignorehistory" -u low -t 0 -r 9988
 
 # tmux
-alt + y
-	xte 'keyup Alt_L' 'keyup y' 'keydown Super_L' 'keydown j' 'keyup j' 'keyup Super_L' 'keydown Alt_L'
+# alt + y
+	# xte 'keyup Alt_L' 'keyup y' 'keydown Super_L' 'keydown j' 'keyup j' 'keyup Super_L' 'keydown Alt_L'
 # super + j
 	# ~/.scripts/keybind.sh "super+j" "tmux previous-window"
 # super + k
@@ -109,11 +118,11 @@ super + a ; m
 super + a ; r
 	tmux source-file ~/.tmux.conf; tmux display-message -d 150 "tmux reloaded"
 super + a ; n
-	tmux display-popup -w 80% -h 60% -E "fzf-nvim.sh dir cur"
+	tmux display-popup -w 80% -h 60% -E "fzf-nvim.sh"
 super + a ; N
-	tmux display-popup -w 50% -h 60% -E 'fzf-nvim.sh config'
+	tmux display-popup -w 50% -h 60% -E "fzf-nvim.sh config"
 super + a ; c
-	tmux display-popup -w 80% -h 60% -E 'fzf-cd.sh'
+	tmux display-popup -w 80% -h 60% -E "fzf-cd.sh"
 super + a ; s
 	tmux-switch-session.sh
 super + a ; Escape
@@ -208,3 +217,5 @@ super + a ; Escape
 # move a floating window
 # super + {Left,Down,Up,Right}
 	# bspc node -v {-20 0,0 20,0 -20,20 0}
+
+; vim:ft=conf

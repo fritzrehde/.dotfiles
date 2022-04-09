@@ -1,33 +1,42 @@
-#!/bin/bash
+#!/bin/sh
 
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
+export SXHKD_SHELL=/bin/sh
 
 # clipmenu
 export CM_LAUNCHER=rofi
 export CM_OUPUT_CLIP=0
 
 # fzf
-FZF_BINDINGS="--bind=\
-tab:toggle+down,\
-P:toggle-preview,\
-J:down,\
-K:up,\
-G:clear-query+first,\
-btab:toggle+clear-query+first,\
-A:toggle-all"
-export FZF_DEFAULT_OPTS="$FZF_BINDINGS \
-	--multi \
-	--reverse \
-	--no-info \
-	--preview-window=65%,hidden,border-sharp \
-	--color=border:#444B5D \
-	--color=prompt:#AEC694 \
-	--color=pointer:#8FAAC9 \
-	--color=gutter:#2e3440 \
-	--color=bg+:#444B5D \
-	--color=marker:red \
-	--color=header:#8FAAC9 \
-	--color=query:regular"
+FZF_BINDINGS=$(
+	tr -d '\n' <<-END
+	--bind=
+	tab:toggle+down,
+	P:toggle-preview,
+	J:down,
+	K:up,
+	G:clear-query+first,
+	btab:toggle+clear-query+first,
+	A:toggle-all
+	END
+)
+export FZF_DEFAULT_OPTS=$(
+	tr -d '\n' <<-END
+	$FZF_BINDINGS 
+	--multi 
+	--reverse 
+	--no-info 
+	--preview-window=65%,hidden,border-sharp 
+	--color=border:#444B5D 
+	--color=prompt:#AEC694 
+	--color=pointer:#8FAAC9 
+	--color=gutter:#2e3440 
+	--color=bg+:#444B5D 
+	--color=marker:red 
+	--color=header:#8FAAC9 
+	--color=query:regular
+	END
+)

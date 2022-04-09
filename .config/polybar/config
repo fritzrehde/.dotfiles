@@ -9,10 +9,12 @@ alert = #bf616a
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
+enable-ipc = true
 height = 20
 top = true
 fixed-center = true
 wm-restack = bspwm
+;pin-workspaces = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -26,7 +28,7 @@ module-margin-right = 1
 font-0 = Terminus:size=10;2
 font-1 = FiraCode Nerd Font:size=11;3
 
-modules-left = i3 bspwm
+modules-left = bspwm
 modules-center = date
 modules-right = bluetooth wlan eth cpu_temp ram_used battery
 
@@ -52,24 +54,10 @@ label-empty-padding = 0
 ; label-separator = |
 
 
-[module/date]
-type = internal/date
-interval = 2
-date = %a, %d %b
-time = %H:%M
-label = %date% %time%
-
-
-[module/date2]
-type = custom/script
-interval = 2
-exec = date +"%a, %e %b %H:%M"
-
-
 [module/wlan]
 type = internal/network
 interface = wlp3s0
-interval = 5
+interval = 10
 
 format-connected = 直 <label-connected>
 label-connected = %essid%
@@ -82,11 +70,11 @@ format-disconnected =
 
 [module/eth]
 type = internal/network
-interface = wwp0s29u1u4i6
-interval = 5
+interface = enp0s25
+interval = 10
 
-format-connected =  <label-connected>
-label-connected = %local_ip%
+format-connected = 
+;label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -94,10 +82,16 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 
+[module/date]
+type = custom/script
+interval = 2
+exec = date +"%a, %d %b %H:%M"
+
+
 [module/cpu_temp]
 type = custom/script
 interval = 10
-exec = ~/.local/bin/cpu-temp.sh
+exec = cpu-temp.sh
 format-prefix = "﨎 "
 format-suffix = "°"
 
@@ -105,42 +99,28 @@ format-suffix = "°"
 [module/ram_used]
 type = custom/script
 interval = 10
-exec = ~/.local/bin/ram-used.sh
+exec = ram-used.sh
 format-prefix = " "
 format-suffix = " GB"
-
-
-[module/bluetooth]
-type = custom/script
-interval = 10
-exec = ~/.local/bin/bluetooth.sh
 
 
 [module/battery]
 type = custom/script
 interval = 10
-exec = ~/.local/bin/battery.sh
-click-left = "pkill -USR1 -x sxhkd; dunstify 'sxhkd reloaded' -a 'ignorehistory' -t 500 -r 9997"
+exec = battery.sh
+click-left = sxhkd-reload.sh
 
 
-[module/battery2]
-type = internal/battery
-battery = BAT0
-adapter = AC
-poll-interval = 10
-full-at = 100
+[module/bluetooth]
+type = custom/script
+interval = 10
+exec = bluetooth.sh
 
-format-charging =  <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full =  <label-full>
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
-ramp-capacity-0-foreground = ${colors.alert}
+[module/mute]
+type = custom/ipc
+hook-0 = mute-status.sh
+initial = 1
 
 
 [settings]

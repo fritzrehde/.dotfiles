@@ -21,6 +21,7 @@ c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
 # settings
+config.source('search_engines.py')
 config.set('content.javascript.can_access_clipboard', True)
 c.editor.command = ['nvim', '{file}']
 c.messages.timeout = 1000
@@ -62,10 +63,11 @@ config.bind('<Meta-j>', 'tab-prev')
 config.bind('<Meta-k>', 'tab-next')
 config.bind('<Meta-Left>', 'tab-move -')
 config.bind('<Meta-Right>', 'tab-move +')
-config.bind('x', 'tab-close')
 config.bind('<Meta-n>', 'set-cmd-text -s :open -t')
+config.bind('<Meta-Shift-n>', 'set-cmd-text -s :open -p')
 config.bind('<Meta-b>', 'set-cmd-text -s :quickmark-load -t')
-config.bind('<w>', 'tab-give')
+config.bind('x', 'tab-close')
+config.bind('w', 'tab-give')
 
 ## yank
 config.bind('yy', 'yank --quiet url')
