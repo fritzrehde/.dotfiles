@@ -58,3 +58,6 @@ c.colors.statusbar.command.private.fg = white
 # c.colors.statusbar.insert.fg = darkgrey
 c.colors.statusbar.url.fg = white
 c.colors.statusbar.url.success.https.fg = lime
+
+# download bar
+c.colors.downloads.bar.bg = darkgrey

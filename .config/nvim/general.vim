@@ -47,5 +47,5 @@ set vb t_vb=
 " Nord theme
 let g:nord_cursor_line_number_background=1
 
-" Syntax
-au BufRead *.minijava set filetype=java
+" recommended styles
+let g:rust_recommended_style=0

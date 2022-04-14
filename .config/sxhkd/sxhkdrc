@@ -1,16 +1,3 @@
-alt + c
-	xte \
-	'keyup Alt_L' 'keyup c' \
-	'keydown Control_L' 'keydown c' \
-	'keyup c' 'keyup Control_L'
-
-alt + v
-	xte \
-	'keyup Alt_L' 'keyup v' \
-	'keydown Control_L' 'keydown v' \
-	'keyup v' 'keyup Control_L' \
-	'keydown Alt_L'
-
 # open terminal
 alt + Return
 	kitty
@@ -103,6 +90,25 @@ super + shift + {3, 4}
 alt + shift + w
 	NAME=$(xdotool getactivewindow getwindowname); \
 	dunstify "Window name: $NAME" -a "ignorehistory" -u low -t 0 -r 9988
+
+alt + o
+	rofi-calc.sh
+
+# copy remap
+alt + c
+	xte \
+	'keyup Alt_L' 'keyup c' \
+	'keydown Control_L' 'keydown c' \
+	'keyup c' 'keyup Control_L'
+
+# paste remap
+alt + v
+	xte \
+	'keyup Alt_L' 'keyup v' \
+	'keydown Control_L' 'keydown v' \
+	'keyup v' 'keyup Control_L' \
+	'keydown Alt_L'
+
 
 # tmux
 # alt + y

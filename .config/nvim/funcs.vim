@@ -13,6 +13,7 @@ let s:comment_map = {
 	\ "make": '#',
 	\ "tmux": '#',
 	\ "cfg": '#',
+	\ "rust": '\/\/',
 	\}
 
 function! ToggleComment()

@@ -30,7 +30,7 @@ font-1 = FiraCode Nerd Font:size=11;3
 
 modules-left = bspwm
 modules-center = date
-modules-right = bluetooth wlan eth cpu_temp ram_used battery
+modules-right = amphetamine vpn wlan eth cpu_temp ram_used battery
 
 
 [module/bspwm]
@@ -86,6 +86,7 @@ format-disconnected =
 type = custom/script
 interval = 2
 exec = date +"%a, %d %b %H:%M"
+click-left = timezones.sh
 
 
 [module/cpu_temp]
@@ -120,6 +121,20 @@ exec = bluetooth.sh
 [module/mute]
 type = custom/ipc
 hook-0 = mute-status.sh
+initial = 1
+
+
+[module/amphetamine]
+type = custom/ipc
+hook-0 =
+hook-1 = printf ""
+initial = 1
+
+
+[module/vpn]
+type = custom/ipc
+hook-0 =
+hook-1 = printf "ﱾ"
 initial = 1
 
 

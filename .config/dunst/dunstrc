@@ -1,11 +1,12 @@
 # notification ids
-9999 volume
-9998 low battery
-9997 sxhkd reloaded
-9990 timer
-9989 mpv error
-9988 window name
-9987 extra information
+# 9999 volume
+# 9998 low battery
+# 9997 sxhkd reloaded
+# 9990 timer
+# 9989 mpv error
+# 9988 window name
+# 9987 extra information
+# 9986 timezones
 
 [global]
 	### Display ###
