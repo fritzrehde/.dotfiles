@@ -57,7 +57,7 @@ alt + t
 
 # todo add
 alt + n
-	st -c popup_xs -e todo-add.sh
+	todo-add.sh
 
 # torrents
 alt + e
