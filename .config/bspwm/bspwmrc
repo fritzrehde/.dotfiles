@@ -2,9 +2,6 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-# bspwm-monitor.sh
-# bspc monitor LVDS1 -d 1 2 3 4 
-# bspc monitor DP1 -d 5 6 7 8
 $HOME/.config/polybar/launch.sh &
 feh --no-fehbg --bg-scale ~/.wallpapers/macos_mojave_night.jpg &
 
@@ -18,10 +15,12 @@ bspc config single_monocle true
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 
+bspwm-rule-floating.sh
 bspc rule -a popup_xs state=floating focus=on rectangle=600x80+383+64
 bspc rule -a popup_s state=floating focus=on rectangle=600x660+383+64
 bspc rule -a popup_l state=floating focus=on rectangle=600x680+383+44
+
 bspc rule -a Zathura state=tiled focus=on desktop=any.!occupied
-bspc rule -a Discord desktop=any.!occupied
+bspc rule -a discord desktop=any.!occupied
 bspc rule -a mpv desktop=any.!occupied
 # bspc rule -a Zoom desktop=any.!occupied

@@ -19,6 +19,7 @@ c.tabs.show = 'multiple'
 c.colors.webpage.bg = 'black'
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+config.bind(',', 'config-cycle content.user_stylesheets ~/css/solarized-dark-all-sites.css ""')
 
 # settings
 config.source('search_engines.py')
@@ -82,6 +83,7 @@ config.bind('L', 'forward')
 ## hints
 config.bind('i', 'hint --first inputs')
 config.bind('I', 'hint inputs')
+config.bind('<Meta-i>', 'mode-enter passthrough')
 config.bind('q', 'jseval -q document.activeElement.blur()')
 config.bind('<Escape>', 'mode-leave ;; jseval -q document.activeElement.blur()', mode='insert')
 

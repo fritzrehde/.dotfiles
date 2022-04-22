@@ -1,6 +1,6 @@
 include ../main
 
-map w exec 'bash -ic "~/.local/bin/zathura-mode.sh $FILE main"'
+map w exec 'sh -ic "~/.local/bin/zathura-mode.sh \"$FILE\" main"'
 
 map j scroll down
 map k scroll up

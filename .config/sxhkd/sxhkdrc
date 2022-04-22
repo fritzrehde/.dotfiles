@@ -53,7 +53,7 @@ alt + Escape
 
 # todo list
 alt + t
-	st -c popup_s -e todo-do.sh
+	st -c floating_tall -e todo-do.sh
 
 # todo add
 alt + n
