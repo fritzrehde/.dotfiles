@@ -46,6 +46,8 @@ c.colors.statusbar.command.bg = darkgrey
 c.colors.statusbar.command.fg = white
 c.colors.statusbar.insert.bg = lime
 c.colors.statusbar.insert.fg = darkgrey
+c.colors.statusbar.passthrough.bg = green
+c.colors.statusbar.passthrough.fg = darkgrey
 c.colors.statusbar.url.fg = white
 c.colors.statusbar.url.success.https.fg = lime
 

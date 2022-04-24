@@ -30,6 +30,7 @@ fi
 setxkbmap -layout us -variant altgr-intl -option caps:swapescape
 xset r rate 200 25
 
+# picom &
 sxhkd &
 clipmenud &
 dunst &

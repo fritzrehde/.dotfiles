@@ -19,7 +19,7 @@ c.tabs.show = 'multiple'
 c.colors.webpage.bg = 'black'
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
-config.bind(',', 'config-cycle content.user_stylesheets ~/css/solarized-dark-all-sites.css ""')
+# config.bind(',', 'config-cycle content.user_stylesheets ~/css/solarized-dark-all-sites.css ""')
 
 # settings
 config.source('search_engines.py')
@@ -31,9 +31,10 @@ c.messages.timeout = 1000
 c.statusbar.widgets = ['url', 'scroll', 'progress']
 
 ## search engines
-c.url.searchengines['gh'] = 'https://github.com/search?q={}'
-c.url.searchengines['yt'] = 'https://youtube.com/search?q={}'
-c.url.searchengines['go'] = 'https://google.com/search?q={}'
+c.url.searchengines['gh'] = 'https://www.github.com/search?q={}'
+c.url.searchengines['yt'] = 'https://www.youtube.com/search?q={}'
+c.url.searchengines['go'] = 'https://www.google.com/search?q={}'
+c.url.searchengines['amaz'] = 'https://www.amazon.de/s?k={}'
 
 ## downloads
 c.downloads.location.directory = '~/Downloads'

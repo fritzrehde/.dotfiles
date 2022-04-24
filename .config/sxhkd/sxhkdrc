@@ -35,6 +35,10 @@ alt + Tab
 alt + {Left,Right}
 	bspc node --swap next.local.window --follow
 
+# adjust window width
+alt + {h,l}
+	{bspc node -z right -20 0; bspc node -z left -20 0, bspc node -z right 20 0; bspc node -z left 20 0}
+
 # rofi apps
 alt + d
 	rofi -show drun -theme ~/.config/rofi/themes/icons.rasi
@@ -106,8 +110,7 @@ alt + v
 	xte \
 	'keyup Alt_L' 'keyup v' \
 	'keydown Control_L' 'keydown v' \
-	'keyup v' 'keyup Control_L' \
-	'keydown Alt_L'
+	'keyup v' 'keyup Control_L'
 
 
 # tmux
