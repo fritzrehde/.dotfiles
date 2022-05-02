@@ -14,6 +14,7 @@ let s:comment_map = {
 	\ "tmux": '#',
 	\ "cfg": '#',
 	\ "rust": '\/\/',
+	\ "toml": '#',
 	\}
 
 function! ToggleComment()

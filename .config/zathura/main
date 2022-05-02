@@ -19,6 +19,7 @@ map f toggle_fullscreen
 ## navigation
 map z snap_to_page
 map = zoom in
+map 0 adjust_window best-fit
 
 ### scrolling
 map Down scroll down

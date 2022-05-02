@@ -4,7 +4,7 @@ alias c="clear"
 alias ct="clear; exa --tree"
 alias ..="cd .."
 alias update='notify-on-complete.sh "sudo pacman -Syu"'
-alias updateyay='notify-on-complete.sh "yay -Syu"'
+alias update-yay='notify-on-complete.sh "yay -Syu"'
 alias yy="fc -ln -1 | tr -d '\n' | xclip -selection clipboard -i"
 alias open="xdg-open"
 

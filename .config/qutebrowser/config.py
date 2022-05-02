@@ -31,10 +31,12 @@ c.messages.timeout = 1000
 c.statusbar.widgets = ['url', 'scroll', 'progress']
 
 ## search engines
-c.url.searchengines['gh'] = 'https://www.github.com/search?q={}'
-c.url.searchengines['yt'] = 'https://www.youtube.com/search?q={}'
-c.url.searchengines['go'] = 'https://www.google.com/search?q={}'
-c.url.searchengines['amaz'] = 'https://www.amazon.de/s?k={}'
+c.url.searchengines['gh'] = 'https://github.com/search?q={}'
+c.url.searchengines['yt'] = 'https://youtube.com/search?q={}'
+c.url.searchengines['go'] = 'https://google.com/search?q={}'
+c.url.searchengines['amaz'] = 'https://amazon.de/s?k={}'
+c.url.searchengines['cr'] = 'https://crates.io/search?q={}'
+# c.url.searchengines['rs'] = 'https://doc.rust-lang.org/search?q={}'
 
 ## downloads
 c.downloads.location.directory = '~/Downloads'
@@ -66,6 +68,7 @@ config.bind('<Meta-k>', 'tab-next')
 config.bind('<Meta-Left>', 'tab-move -')
 config.bind('<Meta-Right>', 'tab-move +')
 config.bind('<Meta-n>', 'set-cmd-text -s :open -t')
+config.bind('<Meta-o>', 'set-cmd-text -s :open -t {url}')
 config.bind('<Meta-Shift-n>', 'set-cmd-text -s :open -p')
 config.bind('<Meta-b>', 'set-cmd-text -s :quickmark-load -t')
 config.bind('x', 'tab-close')
