@@ -49,3 +49,5 @@ let g:nord_cursor_line_number_background=1
 
 " recommended styles
 let g:rust_recommended_style=0
+
+autocmd BufWritePost *.tex !make

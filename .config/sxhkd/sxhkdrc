@@ -39,6 +39,10 @@ alt + {Left,Right}
 alt + {h,l}
 	{bspc node -z right -20 0; bspc node -z left -20 0, bspc node -z right 20 0; bspc node -z left 20 0}
 
+# adjust window height
+alt + {j,k}
+	{bspc node -z bottom 0 20; bspc node -z top 0 20, bspc node -z bottom 0 -20; bspc node -z top 0 -20}
+
 # rofi apps
 alt + d
 	rofi -show drun -theme ~/.config/rofi/themes/icons.rasi
@@ -80,8 +84,8 @@ alt + w
 	dunstctl close-all
 
 # volume control
-alt + {k, j, m}
-	changevolume.sh {up, down, mute}
+# alt + {k, j, m}
+	# changevolume.sh {up, down, mute}
 
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
 	changevolume.sh {up, down, mute}
@@ -123,7 +127,7 @@ alt + v
 super + q
 	tmux-kill-session.sh
 super + a ; m
-	tmux command-prompt -p "man" "new-window -a man '%1'"
+	tmux command-prompt -p "man" "new-window -a \"man %1\""
 super + a ; r
 	tmux source-file ~/.tmux.conf; tmux display-message -d 150 "tmux reloaded"
 super + a ; n

@@ -16,8 +16,8 @@ nnoremap J <C-d>zz
 nnoremap K <C-u>zz
 
 " commenting
-nnoremap <leader><Space> :call ToggleComment()<cr>
-vnoremap <leader><Space> :call ToggleComment()<cr>
+nnoremap <leader><Space> <Plug>CommentaryLine
+vnoremap <leader><Space> <Plug>Commentary
 
 " auto-close brackets
 inoremap {<CR> {<CR>}<ESC>O

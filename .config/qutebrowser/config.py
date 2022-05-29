@@ -27,6 +27,12 @@ config.set('content.javascript.can_access_clipboard', True)
 c.editor.command = ['nvim', '{file}']
 c.messages.timeout = 1000
 
+## fileselect
+c.fileselect.handler = 'external'
+c.fileselect.folder.command = ['qutebrowser-fileselect.sh', 'directory', '{}']
+c.fileselect.single_file.command = ['qutebrowser-fileselect.sh', 'file', '{}']
+c.fileselect.multiple_files.command = ['qutebrowser-fileselect.sh', 'files', '{}']
+
 ## statusbar
 c.statusbar.widgets = ['url', 'scroll', 'progress']
 

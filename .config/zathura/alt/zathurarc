@@ -6,3 +6,6 @@ map j scroll down
 map k scroll up
 map J navigate next
 map K navigate previous
+
+map Down scroll down
+map Up scroll up

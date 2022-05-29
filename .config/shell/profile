@@ -10,6 +10,9 @@ export SXHKD_SHELL=/bin/sh
 export CM_LAUNCHER=rofi
 export CM_OUPUT_CLIP=0
 
+# calibre
+# export CALIBRE_USE_DARK_PALETTE=1
+
 # fzf
 FZF_BINDINGS=$(
 	tr -d '\n' <<-END

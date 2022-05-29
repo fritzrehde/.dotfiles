@@ -1,19 +1,19 @@
+# settings
 set hidden on
-map J :updir; down; open
-map K :updir; up; open
-map R reload
-map v toggle
-map <esc> unselect
 set period 1
 set scrolloff 10
 set ratios '1:2:5'
 
+# bindings
 map g top
-map A rename # at the very end
+map v toggle
+map <esc> unselect
 map c push A<c-u> # new rename
-map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
+map I push A<c-a> # at the very beginning
 map a push A<a-b> # after extension
+map A rename # at the very end
+map m push :mkdir<space>
 
 # interpreter for shell commands
 set shell zsh
@@ -49,6 +49,8 @@ map <enter> open
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
@@ -62,7 +64,7 @@ cmd open ${{
 }}
 
 # define a custom 'rename' command without prompt for overwrite
-cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 map r push :rename<space>
 
 # make sure trash folder exists

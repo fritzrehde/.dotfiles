@@ -3,12 +3,17 @@ alias z="source ~/.zshrc"
 alias c="clear"
 alias ct="clear; exa --tree"
 alias ..="cd .."
-alias update='notify-on-complete.sh "sudo pacman -Syu"'
-alias update-yay='notify-on-complete.sh "yay -Syu"'
+alias update='notify.sh "sudo pacman -Syu"'
+alias update-yay='notify.sh "yay -Syu"'
 alias yy="fc -ln -1 | tr -d '\n' | xclip -selection clipboard -i"
 alias open="xdg-open"
 
-## Shell scripts
+## git
+alias gp='git pull'
+alias gs='git status'
+alias gd='git diff | diff-so-fancy'
+
+## shell scripts
 alias n='nvim.sh'
 alias t='tmux-startup.sh'
 alias gq='gitquick.sh'
